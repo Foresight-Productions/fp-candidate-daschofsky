@@ -588,6 +588,84 @@ body {
   margin-bottom: 0.3rem;
 }
 
+/* ===== CREDENTIALS ===== */
+.credentials { background: var(--bg-medium); }
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  margin-top: 3rem;
+}
+.credentials-col {
+  padding: 2.4rem 2rem;
+  border-bottom: 1px solid var(--line);
+}
+.credentials-col:last-child { border-bottom: none; }
+.cred-col-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line-bright);
+}
+.award-list { list-style: none; padding: 0; margin: 0; }
+.award-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.award-item:last-child { border-bottom: none; }
+.award-year {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  padding-top: 0.1rem;
+}
+.award-name {
+  font-size: 0.85rem;
+  color: var(--text-bright);
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.award-name small {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-top: 0.2rem;
+}
+.cert-group { margin-bottom: 1.8rem; }
+.cert-group:last-child { margin-bottom: 0; }
+.cert-group-label {
+  font-size: 0.63rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line-bright);
+  padding-bottom: 0.4rem;
+}
+.cert-list { list-style: none; padding: 0; margin: 0; }
+.cert-list li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.45;
+}
+.cert-list li:last-child { border-bottom: none; }
+
 /* ===== YARD SIGN ===== */
 .yardsign {
   background: var(--bg-stripe);
@@ -957,6 +1035,9 @@ body {
 
 @media (min-width: 768px) {
   .yardsign-grid { grid-template-columns: 1fr 1.1fr; gap: 4rem; }
+  .credentials-grid { grid-template-columns: 1fr 1fr; }
+  .credentials-col { border-bottom: none; border-right: 1px solid var(--line); }
+  .credentials-col:last-child { border-right: none; }
 }
 
 @media (min-width: 1024px) {
@@ -1055,6 +1136,8 @@ body {
     <ul class="nav-links">
       <li><a href="#bio">About</a></li>
       <li><a href="#issues">Issues</a></li>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#credentials">Credentials</a></li>
       <li><a href="#endorsements">Endorsements</a></li>
       <li><a href="#volunteer">Volunteer</a></li>
       <li>
@@ -1083,6 +1166,7 @@ body {
     <li><a href="#bio">About</a></li>
     <li><a href="#issues">Issues</a></li>
     <li><a href="#record">Record</a></li>
+    <li><a href="#credentials">Credentials</a></li>
     <li><a href="#endorsements">Endorsements</a></li>
     <li><a href="#volunteer">Volunteer</a></li>
     <li><a href="#yardsign">Yard Sign</a></li>
@@ -1112,8 +1196,8 @@ body {
           <span class="hero-credential-text">Life Saving Award<small>Walla Walla City Council</small></span>
         </div>
         <div class="hero-credential">
-          <span class="hero-credential-year">2022</span>
-          <span class="hero-credential-text">Top DUI Officer<small>WW County Sheriff's Office</small></span>
+          <span class="hero-credential-year">FBI</span>
+          <span class="hero-credential-text">LEEDA Leadership Trilogy<small>SLI · CLI · ELI Certified</small></span>
         </div>
       </div>
       <div class="hero-meta">
@@ -1147,15 +1231,17 @@ body {
         <div class="eyebrow">Why I'm Running</div>
         <h2 class="section-title">Service is the standard. Not the slogan.</h2>
         <p>
-          <strong>Ashley Daschofsky has served Walla Walla County as a sheriff's deputy</strong>, building a career on the unglamorous work that actually keeps communities safe: traffic stops that take impaired drivers off the road, calls answered in the middle of the night, and showing up when neighbors need help most.
+          <strong>Ashley Daschofsky has spent his career in uniform</strong> — first earning a Meritorious Mast for his role responding to the 2007 Camp Pendleton wildfires, then building a law enforcement record in Walla Walla County that is hard to match. He was named Officer of the Year at the College Place Police Department in 2014 before bringing that experience to the Walla Walla County Sheriff's Office.
         </p>
         <p>
-          In December 2025, Deputy Daschofsky helped pull a woman from a burning vehicle on U.S. 12. The Walla Walla City Council recognized him with a Life Saving Award in February 2026. In 2022, he was named the agency's Top DUI Enforcement Officer. This is the record he'll bring to the Sheriff's Office.
+          As a certified K9 handler with ten separate training certifications, Ashley has worked narcotics detection, advanced tracking, and full deployment operations alongside his department dog. His commitment to traffic safety has earned him six Traffic Safety DUI awards — six years of removing impaired drivers from the roads that connect our communities.
         </p>
         <p>
-          He's running because the people of Walla Walla County deserve a sheriff who answers to them, backs the deputies who serve them, and treats this job like what it is: a duty, not a stepping stone.
+          Ashley completed the full FBI LEEDA Leadership Trilogy — Supervisor, Command, and Executive Leadership Institute — one of the most rigorous leadership development tracks in American law enforcement. In December 2025, he helped pull a woman from a burning vehicle on U.S. 12. The Walla Walla City Council recognized him with a 2026 Life Saving Award.
         </p>
-        <span class="placeholder-note">[TBD: Final bio copy from candidate]</span>
+        <p>
+          He's running because this county deserves a sheriff who answers to the people, backs the deputies who serve them, and treats this job the way he always has: as a duty, not a stepping stone.
+        </p>
       </div>
     </div>
   </div>
@@ -1211,20 +1297,123 @@ body {
     </div>
     <div class="stat-grid fade-up">
       <div class="stat">
-        <span class="stat-num" data-count="2026">0</span>
-        <p class="stat-label"><strong>Life Saving Award</strong>Walla Walla City Council recognition for the December 2025 vehicle fire rescue on U.S. 12.</p>
+        <span class="stat-num" data-count="6">0</span>
+        <p class="stat-label"><strong>DUI Traffic Safety Awards</strong>Six-time winner of the Traffic Safety DUI Award — 2016 and five consecutive years, 2021–2026.</p>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count="2022">0</span>
-        <p class="stat-label"><strong>Top DUI Officer</strong>Recognized as the agency's leading DUI enforcement deputy for the year.</p>
+        <span class="stat-num" data-count="25">0</span>
+        <p class="stat-label"><strong>Military Funerals Honored</strong>Certificate of Commendation for service on the funeral honor team for 25 military services.</p>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count="100">0</span><span class="stat-suffix">%</span>
-        <p class="stat-label"><strong>Constitutional</strong>Sworn to defend the rights of every law-abiding citizen of Walla Walla County.</p>
+        <span class="stat-num" data-count="3">0</span>
+        <p class="stat-label"><strong>FBI LEEDA Certifications</strong>Completed the full Leadership Trilogy — Supervisor, Command, and Executive Leadership Institute.</p>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count="24">0</span><span class="stat-suffix">/7</span>
-        <p class="stat-label"><strong>On Call</strong>Already serving the county every shift, every season, in every weather.</p>
+        <span class="stat-num" data-count="10">0</span>
+        <p class="stat-label"><strong>K9 Handler Certifications</strong>Certified in narcotics detection, advanced tracking, full deployment, agitation, and decoy work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREDENTIALS ===== -->
+<section class="section credentials" id="credentials">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow">Awards &amp; Certifications</div>
+      <h2 class="section-title">The record that qualifies the candidate.</h2>
+    </div>
+    <div class="credentials-grid fade-up">
+      <div class="credentials-col">
+        <div class="cred-col-label">Awards &amp; Commendations</div>
+        <ul class="award-list">
+          <li class="award-item">
+            <span class="award-year">2026</span>
+            <span class="award-name">Life Saving Award<small>Walla Walla City Council</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2025</span>
+            <span class="award-name">Traffic Safety DUI Award Winner<small>Washington Traffic Safety Commission</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2024</span>
+            <span class="award-name">Traffic Safety DUI Award Winner<small>Washington Traffic Safety Commission</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2023</span>
+            <span class="award-name">Traffic Safety DUI Award Winner<small>Washington Traffic Safety Commission</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2022</span>
+            <span class="award-name">Traffic Safety DUI Award Winner<small>Washington Traffic Safety Commission</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2021</span>
+            <span class="award-name">Traffic Safety DUI Award Winner<small>Washington Traffic Safety Commission</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2016</span>
+            <span class="award-name">Traffic Safety DUI Award Winner<small>Washington Traffic Safety Commission</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2014</span>
+            <span class="award-name">Officer of the Year<small>College Place Police Department</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2007</span>
+            <span class="award-name">Meritorious Mast<small>Camp Pendleton Wildfires Response</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">—</span>
+            <span class="award-name">Certificate of Commendation<small>Military Funeral Honor Guard · 25 honored services</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">—</span>
+            <span class="award-name">FBI LEEDA Leadership Trilogy<small>Full executive leadership series — SLI · CLI · ELI</small></span>
+          </li>
+        </ul>
+      </div>
+      <div class="credentials-col">
+        <div class="cred-col-label">Professional Certifications</div>
+        <div class="cert-group">
+          <div class="cert-group-label">Law Enforcement Foundation</div>
+          <ul class="cert-list">
+            <li>WA State CJTC — Basic Law Enforcement Academy</li>
+            <li>POST Certified — Basic Public Safety Dispatch</li>
+            <li>Domestic Violence Prevention &amp; Investigation</li>
+            <li>Desert Snow Criminal &amp; Terrorist Interdiction</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <div class="cert-group-label">Traffic Safety &amp; DUI Enforcement</div>
+          <ul class="cert-list">
+            <li>NHTSA / IACP — Standardized Field Sobriety Testing</li>
+            <li>POST Certified — Street Racing &amp; Modified Vehicle Investigations</li>
+            <li>Intoximeter Certified — Alco Sensor 4 &amp; Point of Arrest (operation, instruction &amp; calibration)</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <div class="cert-group-label">K9 Handler</div>
+          <ul class="cert-list">
+            <li>Adlerhorst — Basic Handler School &amp; Team Certification</li>
+            <li>Adlerhorst — Narcotics Detection Course &amp; Team</li>
+            <li>Adlerhorst — Basic Decoy, Full Deployment Preparation</li>
+            <li>Adlerhorst — Agitator I &amp; II, Handler Development</li>
+            <li>Paraclete K9 — Behavior Shaping &amp; E-Collar</li>
+            <li>Civil Dog USA — Advanced Tracking / Trailing</li>
+            <li>Spokane Police Department — Decoy Certification</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <div class="cert-group-label">Leadership &amp; Command</div>
+          <ul class="cert-list">
+            <li>FBI Designated Rifle Marksman Certified</li>
+            <li>WSCJTC — First Line Supervision Certified</li>
+            <li>FBI LEEDA — Supervisor Leadership Institute (SLI)</li>
+            <li>FBI LEEDA — Command Leadership Institute (CLI)</li>
+            <li>FBI LEEDA — Executive Leadership Institute (ELI)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

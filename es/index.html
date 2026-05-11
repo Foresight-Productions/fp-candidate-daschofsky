@@ -607,6 +607,25 @@ body {
 .updates-input:focus { border-color: var(--gold); }
 .updates-input::placeholder { color: var(--text-dim); }
 
+/* ===== CREDENTIALS ===== */
+.credentials { background: var(--bg-medium); }
+.credentials-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--line); margin-top: 3rem; }
+.credentials-col { padding: 2.4rem 2rem; border-bottom: 1px solid var(--line); }
+.credentials-col:last-child { border-bottom: none; }
+.cred-col-label { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.6rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--line-bright); }
+.award-list { list-style: none; padding: 0; margin: 0; }
+.award-item { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--line); align-items: start; }
+.award-item:last-child { border-bottom: none; }
+.award-year { font-family: var(--font-display); font-size: 0.82rem; color: var(--gold); letter-spacing: 0.03em; padding-top: 0.1rem; }
+.award-name { font-size: 0.85rem; color: var(--text-bright); line-height: 1.4; font-weight: 600; letter-spacing: 0.04em; }
+.award-name small { display: block; color: var(--text-dim); font-size: 0.75rem; font-weight: 400; letter-spacing: 0.06em; margin-top: 0.2rem; }
+.cert-group { margin-bottom: 1.8rem; }
+.cert-group:last-child { margin-bottom: 0; }
+.cert-group-label { font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.7rem; border-bottom: 1px solid var(--line-bright); padding-bottom: 0.4rem; }
+.cert-list { list-style: none; padding: 0; margin: 0; }
+.cert-list li { font-size: 0.8rem; color: var(--text-muted); padding: 0.5rem 0; border-bottom: 1px solid var(--line); line-height: 1.45; }
+.cert-list li:last-child { border-bottom: none; }
+
 .yardsign { background: var(--bg-stripe); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .yardsign-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-top: 2.6rem; align-items: start; }
 .yardsign-visual {
@@ -819,6 +838,9 @@ body {
       linear-gradient(to bottom, transparent 55%, oklch(0.13 0.008 80 / 0.45) 100%);
   }
   .yardsign-grid { grid-template-columns: 1fr 1.1fr; gap: 4rem; }
+  .credentials-grid { grid-template-columns: 1fr 1fr; }
+  .credentials-col { border-bottom: none; border-right: 1px solid var(--line); }
+  .credentials-col:last-child { border-right: none; }
 }
 
 @media (min-width: 1024px) {
@@ -908,6 +930,8 @@ body {
     <ul class="nav-links">
       <li><a href="#bio">Acerca</a></li>
       <li><a href="#issues">Prioridades</a></li>
+      <li><a href="#record">Trayectoria</a></li>
+      <li><a href="#credentials">Certificaciones</a></li>
       <li><a href="#endorsements">Respaldos</a></li>
       <li><a href="#volunteer">Voluntario</a></li>
       <li>
@@ -964,8 +988,8 @@ body {
           <span class="hero-credential-text">Premio por Salvar Vidas<small>Concejo Municipal de Walla Walla</small></span>
         </div>
         <div class="hero-credential">
-          <span class="hero-credential-year">2022</span>
-          <span class="hero-credential-text">Mejor Oficial DUI<small>Oficina del Sheriff del Condado</small></span>
+          <span class="hero-credential-year">FBI</span>
+          <span class="hero-credential-text">Trilogía de Liderazgo LEEDA<small>SLI · CLI · ELI Certificado</small></span>
         </div>
       </div>
       <div class="hero-meta">
@@ -998,15 +1022,17 @@ body {
         <div class="eyebrow">Por Qué Me Postulo</div>
         <h2 class="section-title">El servicio es el estándar. No el eslogan.</h2>
         <p>
-          <strong>Ashley Daschofsky ha servido al Condado de Walla Walla como diputado del Sheriff</strong>, construyendo una carrera basada en el trabajo poco glamuroso que realmente mantiene seguras a las comunidades: paradas de tráfico que sacan a conductores ebrios de la carretera, llamadas atendidas a media noche, y presencia cuando los vecinos más necesitan ayuda.
+          <strong>Ashley Daschofsky ha pasado su carrera en uniforme</strong> — primero ganando un Meritorious Mast por su participación en la respuesta a los incendios forestales de Camp Pendleton en 2007, luego construyendo un expediente en el Condado de Walla Walla difícil de igualar. Fue nombrado Oficial del Año en el Departamento de Policía de College Place en 2014 antes de llevar esa experiencia a la Oficina del Sheriff del Condado de Walla Walla.
         </p>
         <p>
-          En diciembre de 2025, el Diputado Daschofsky ayudó a rescatar a una mujer de un vehículo en llamas en la U.S. 12. El Concejo Municipal de Walla Walla lo reconoció con un Premio por Salvar Vidas en febrero de 2026. En 2022, fue nombrado el Mejor Oficial de Aplicación de DUI de la agencia. Esta es la trayectoria que llevará a la Oficina del Sheriff.
+          Como manejador certificado de K9 con diez certificaciones de entrenamiento, Ashley ha trabajado en detección de narcóticos, rastreo avanzado y operaciones de despliegue completo. Su dedicación a la seguridad vial le ha valido seis Premios de Seguridad de Tráfico contra el DUI — seis años retirando conductores ebrios de las carreteras que conectan nuestras comunidades.
         </p>
         <p>
-          Se postula porque la gente del Condado de Walla Walla merece un sheriff que responda ante ellos, que respalde a los diputados que les sirven, y que trate este trabajo como lo que es: un deber, no un trampolín.
+          Ashley completó la Trilogía de Liderazgo FBI LEEDA completa — Instituto de Liderazgo de Supervisores, Comandantes y Ejecutivos — una de las trayectorias de desarrollo de liderazgo más rigurosas en las fuerzas del orden de Estados Unidos. En diciembre de 2025, ayudó a rescatar a una mujer de un vehículo en llamas en la U.S. 12. El Concejo Municipal de Walla Walla lo reconoció con un Premio por Salvar Vidas en 2026.
         </p>
-        <span class="placeholder-note">[Pendiente: Biografía final del candidato]</span>
+        <p>
+          Se postula porque este condado merece un sheriff que responda ante la gente, respalde a los diputados que la sirven, y trate este trabajo como siempre lo ha hecho: como un deber, no un trampolín.
+        </p>
       </div>
     </div>
   </div>
@@ -1060,20 +1086,123 @@ body {
     </div>
     <div class="stat-grid fade-up">
       <div class="stat">
-        <span class="stat-num" data-count="2026">0</span>
-        <p class="stat-label"><strong>Premio por Salvar Vidas</strong>Reconocimiento del Concejo Municipal de Walla Walla por el rescate vehicular de diciembre de 2025 en la U.S. 12.</p>
+        <span class="stat-num" data-count="6">0</span>
+        <p class="stat-label"><strong>Premios de Seguridad DUI</strong>Seis veces ganador del Premio de Seguridad de Tráfico contra el DUI — 2016 y cinco años consecutivos, 2021–2026.</p>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count="2022">0</span>
-        <p class="stat-label"><strong>Mejor Oficial DUI</strong>Reconocido como el diputado líder en aplicación de leyes contra conductores ebrios del año.</p>
+        <span class="stat-num" data-count="25">0</span>
+        <p class="stat-label"><strong>Funerales Militares Honrados</strong>Certificado de Reconocimiento por servicio en el equipo de honores fúnebres militares en 25 servicios.</p>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count="100">0</span><span class="stat-suffix">%</span>
-        <p class="stat-label"><strong>Constitucional</strong>Juramentado para defender los derechos de cada ciudadano del Condado de Walla Walla que cumple la ley.</p>
+        <span class="stat-num" data-count="3">0</span>
+        <p class="stat-label"><strong>Certificaciones FBI LEEDA</strong>Completó la Trilogía de Liderazgo completa — Instituto de Supervisores, Comandantes y Ejecutivos.</p>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count="24">0</span><span class="stat-suffix">/7</span>
-        <p class="stat-label"><strong>De Guardia</strong>Sirviendo al condado en cada turno, cada estación, en cualquier clima.</p>
+        <span class="stat-num" data-count="10">0</span>
+        <p class="stat-label"><strong>Certificaciones K9</strong>Certificado en detección de narcóticos, rastreo avanzado, despliegue completo, agitación y trabajo de señuelo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREDENTIALS ===== -->
+<section class="section credentials" id="credentials">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow">Premios y Certificaciones</div>
+      <h2 class="section-title">El expediente que califica al candidato.</h2>
+    </div>
+    <div class="credentials-grid fade-up">
+      <div class="credentials-col">
+        <div class="cred-col-label">Premios y Reconocimientos</div>
+        <ul class="award-list">
+          <li class="award-item">
+            <span class="award-year">2026</span>
+            <span class="award-name">Premio por Salvar Vidas<small>Concejo Municipal de Walla Walla</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2025</span>
+            <span class="award-name">Premio de Seguridad de Tráfico DUI<small>Comisión de Seguridad de Tráfico de Washington</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2024</span>
+            <span class="award-name">Premio de Seguridad de Tráfico DUI<small>Comisión de Seguridad de Tráfico de Washington</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2023</span>
+            <span class="award-name">Premio de Seguridad de Tráfico DUI<small>Comisión de Seguridad de Tráfico de Washington</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2022</span>
+            <span class="award-name">Premio de Seguridad de Tráfico DUI<small>Comisión de Seguridad de Tráfico de Washington</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2021</span>
+            <span class="award-name">Premio de Seguridad de Tráfico DUI<small>Comisión de Seguridad de Tráfico de Washington</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2016</span>
+            <span class="award-name">Premio de Seguridad de Tráfico DUI<small>Comisión de Seguridad de Tráfico de Washington</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2014</span>
+            <span class="award-name">Oficial del Año<small>Departamento de Policía de College Place</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">2007</span>
+            <span class="award-name">Meritorious Mast<small>Respuesta a los Incendios de Camp Pendleton</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">—</span>
+            <span class="award-name">Certificado de Reconocimiento<small>Guardia de Honor Militar · 25 servicios fúnebres</small></span>
+          </li>
+          <li class="award-item">
+            <span class="award-year">—</span>
+            <span class="award-name">Trilogía de Liderazgo FBI LEEDA<small>Serie ejecutiva completa — SLI · CLI · ELI</small></span>
+          </li>
+        </ul>
+      </div>
+      <div class="credentials-col">
+        <div class="cred-col-label">Certificaciones Profesionales</div>
+        <div class="cert-group">
+          <div class="cert-group-label">Fundamentos de Aplicación de la Ley</div>
+          <ul class="cert-list">
+            <li>CJTC de WA — Academia Básica de Aplicación de la Ley</li>
+            <li>Certificado POST — Despacho Básico de Seguridad Pública</li>
+            <li>Prevención e Investigación de Violencia Doméstica</li>
+            <li>Desert Snow — Interdicción Criminal y Terrorista</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <div class="cert-group-label">Seguridad Vial y DUI</div>
+          <ul class="cert-list">
+            <li>NHTSA / IACP — Pruebas de Sobriedad de Campo Estandarizadas</li>
+            <li>Certificado POST — Investigaciones de Carreras Callejeras y Vehículos Modificados</li>
+            <li>Certificado Intoximeter — Alco Sensor 4 y Point of Arrest (operación, instrucción y calibración)</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <div class="cert-group-label">Manejador K9</div>
+          <ul class="cert-list">
+            <li>Adlerhorst — Escuela Básica de Manejador y Certificación de Equipo</li>
+            <li>Adlerhorst — Detección de Narcóticos</li>
+            <li>Adlerhorst — Señuelo Básico, Preparación de Despliegue Completo</li>
+            <li>Adlerhorst — Agitador I y II, Desarrollo del Manejador</li>
+            <li>Paraclete K9 — Formación de Comportamiento y Collar Electrónico</li>
+            <li>Civil Dog USA — Rastreo / Seguimiento Avanzado</li>
+            <li>Departamento de Policía de Spokane — Certificación de Señuelo</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <div class="cert-group-label">Liderazgo y Mando</div>
+          <ul class="cert-list">
+            <li>FBI — Tirador de Rifle Designado Certificado</li>
+            <li>WSCJTC — Primera Línea de Supervisión Certificado</li>
+            <li>FBI LEEDA — Instituto de Liderazgo de Supervisores (SLI)</li>
+            <li>FBI LEEDA — Instituto de Liderazgo de Comandantes (CLI)</li>
+            <li>FBI LEEDA — Instituto de Liderazgo Ejecutivo (ELI)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
