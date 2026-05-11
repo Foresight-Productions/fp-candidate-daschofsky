@@ -1001,6 +1001,130 @@ body {
 .footer-compliance a { color: var(--text-muted); }
 .footer-compliance a:hover { color: var(--gold); }
 
+/* ===== DONATE MODAL ===== */
+.donate-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: oklch(0.08 0.006 80 / 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.donate-modal-overlay.open {
+  display: flex;
+}
+.donate-modal {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-bright);
+  max-width: 480px;
+  width: 100%;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  overflow: hidden;
+}
+/* Grid-line texture */
+.donate-modal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+/* Gold top bar */
+.donate-modal::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold);
+}
+.donate-modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  width: 36px; height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 180ms ease, color 180ms ease;
+  z-index: 1;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.donate-modal-close:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.donate-modal-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+.donate-modal-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-bright);
+  margin-bottom: 1.4rem;
+  position: relative;
+}
+.donate-modal-heading span {
+  display: block;
+  color: var(--gold);
+}
+.donate-modal-body {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+.donate-modal-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  background: var(--gold);
+  color: var(--bg-deep);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+  position: relative;
+}
+.donate-modal-email:hover {
+  background: var(--gold-deep);
+  transform: translateY(-1px);
+}
+.donate-modal-fine {
+  margin-top: 1.2rem;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
 /* ===== SECTION BREAKS ===== */
 .section-break {
   display: flex;
@@ -1646,7 +1770,7 @@ body {
       <span class="gold-line">Coming soon.</span>
     </h2>
     <p>The donation portal is being set up. In the meantime, reach out directly to contribute to the campaign.</p>
-    <a href="mailto:Daschofskyforsheriff@gmail.com" class="btn btn-primary donate-btn">Contact to Donate</a>
+    <button class="btn btn-primary donate-btn" onclick="document.getElementById('donateModal').classList.add('open')">Donate</button>
     <p style="margin-top: 1.4rem; font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.04em;">
       Maximum individual contribution: $2,400 per election (per WA PDC). All contributions reported per state law.
     </p>
@@ -1822,7 +1946,38 @@ body {
 
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Donate modal
+const donateModal = document.getElementById('donateModal');
+if (donateModal) {
+  donateModal.addEventListener('click', function(e) {
+    if (e.target === donateModal) donateModal.classList.remove('open');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') donateModal.classList.remove('open');
+  });
+}
 </script>
+
+<!-- ===== DONATE MODAL ===== -->
+<div class="donate-modal-overlay" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateModalTitle">
+  <div class="donate-modal">
+    <button class="donate-modal-close" onclick="document.getElementById('donateModal').classList.remove('open')" aria-label="Close">&#x2715;</button>
+    <div class="donate-modal-eyebrow">Campaign Finance</div>
+    <h2 class="donate-modal-heading" id="donateModalTitle">
+      Online Donations
+      <span>Coming Soon.</span>
+    </h2>
+    <p class="donate-modal-body">
+      The secure donation portal is being set up. In the meantime, reach out directly to contribute to the Daschofsky for Sheriff campaign.
+    </p>
+    <a href="mailto:Daschofskyforsheriff@gmail.com" class="donate-modal-email">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="16" height="12" rx="1"/><path d="M2 5l8 7 8-7"/></svg>
+      Daschofskyforsheriff@gmail.com
+    </a>
+    <p class="donate-modal-fine">Maximum individual contribution: $2,400 per election per WA PDC. All contributions reported per state law.</p>
+  </div>
+</div>
 
 </body>
 </html>
