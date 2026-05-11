@@ -541,68 +541,6 @@ body {
   margin-bottom: 0.3rem;
 }
 
-/* ===== GALLERY ===== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 3rem;
-}
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-elevated);
-  aspect-ratio: 1/1;
-  cursor: pointer;
-}
-.gallery-item img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform 700ms ease, filter 400ms ease;
-  filter: brightness(0.92);
-}
-.gallery-item:hover img { transform: scale(1.04); filter: brightness(1); }
-.gallery-item::after {
-  content: '';
-  position: absolute; inset: 0;
-  box-shadow: inset 0 0 0 1px var(--line);
-  pointer-events: none;
-  transition: box-shadow 240ms ease;
-}
-.gallery-item:hover::after { box-shadow: inset 0 0 0 2px var(--gold); }
-.gallery-item.feature {
-  grid-column: span 2;
-  aspect-ratio: 16/9;
-}
-
-/* Lightbox */
-.lightbox {
-  position: fixed; inset: 0;
-  background: oklch(0.08 0.005 80 / 0.96);
-  z-index: 2000;
-  display: none;
-  align-items: center; justify-content: center;
-  padding: 2rem;
-  backdrop-filter: blur(8px);
-}
-.lightbox.open { display: flex; }
-.lightbox img {
-  max-width: 96vw;
-  max-height: 90vh;
-  display: block;
-  box-shadow: 0 24px 80px oklch(0 0 0 / 0.6);
-}
-.lightbox-close {
-  position: absolute; top: 1.6rem; right: 1.6rem;
-  background: transparent; border: 1px solid var(--line);
-  color: var(--text-bright);
-  width: 48px; height: 48px;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-}
-.lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
-
 /* ===== YARD SIGN ===== */
 .yardsign {
   background: var(--bg-stripe);
@@ -968,15 +906,11 @@ body {
 }
 
 @media (min-width: 768px) {
-  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-  .gallery-item.feature { grid-column: span 2; aspect-ratio: 4/3; }
   .yardsign-grid { grid-template-columns: 1fr 1.1fr; gap: 4rem; }
 }
 
 @media (min-width: 1024px) {
   .endorse-grid { grid-template-columns: repeat(3, 1fr); }
-  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
-  .gallery-item.feature { grid-column: span 2; grid-row: span 2; aspect-ratio: 1/1; }
 }
 
 @media (max-width: 767px) {
@@ -1067,7 +1001,6 @@ body {
       <li><a href="#bio">About</a></li>
       <li><a href="#issues">Issues</a></li>
       <li><a href="#endorsements">Endorsements</a></li>
-      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#volunteer">Volunteer</a></li>
       <li>
         <span class="lang-toggle">
@@ -1096,7 +1029,6 @@ body {
     <li><a href="#issues">Issues</a></li>
     <li><a href="#record">Record</a></li>
     <li><a href="#endorsements">Endorsements</a></li>
-    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#volunteer">Volunteer</a></li>
     <li><a href="#yardsign">Yard Sign</a></li>
     <li><a href="#donate" class="nav-cta">Donate</a></li>
@@ -1265,47 +1197,6 @@ body {
     <span class="placeholder-note" style="margin-top: 1.6rem;">[TBD: Real endorsements with attribution before launch]</span>
   </div>
 </section>
-
-<!-- ===== GALLERY ===== -->
-<section class="section" id="gallery">
-  <div class="container">
-    <div class="fade-up">
-      <div class="eyebrow">Gallery</div>
-      <h2 class="section-title">On the road. On the job. In the community.</h2>
-      <p class="section-lead">A look at the campaign and the candidate, across Walla Walla County.</p>
-    </div>
-    <div class="gallery-grid fade-up">
-      <div class="gallery-item feature" data-full="assets/hero-truck-k9.jpg">
-        <img src="assets/hero-truck-k9.jpg" alt="Ashley Daschofsky with K9 partner in rural Walla Walla County" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="assets/portrait-landscape.jpg">
-        <img src="assets/portrait-landscape.jpg" alt="Ashley Daschofsky in the Walla Walla countryside" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="assets/gallery-field-1.jpg">
-        <img src="assets/gallery-field-1.jpg" alt="Ashley Daschofsky standing in a Walla Walla wheat field" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="assets/family.jpg">
-        <img src="assets/family.jpg" alt="Ashley Daschofsky with family" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="assets/gallery-truck-2.jpg">
-        <img src="assets/gallery-truck-2.jpg" alt="Ashley Daschofsky with K9, second view" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="assets/gallery-portrait-1.jpg">
-        <img src="assets/gallery-portrait-1.jpg" alt="Ashley Daschofsky portrait" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="assets/gallery-field-2.jpg">
-        <img src="assets/gallery-field-2.jpg" alt="Ashley Daschofsky in the field" loading="lazy">
-      </div>
-    </div>
-    <span class="placeholder-note" style="margin-top: 1.6rem;">[TBD: Add event photos, uniform photos, and community shots as the campaign builds]</span>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-  <img src="" alt="" id="lightboxImg">
-</div>
 
 <!-- ===== UPDATES (replacing Events) ===== -->
 <section class="section updates" id="updates">
@@ -1566,34 +1457,6 @@ body {
     });
   }, { threshold: 0.4 });
   document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
-})();
-
-// Lightbox
-(function() {
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbClose = document.getElementById('lightboxClose');
-  if (!lb || !lbImg) return;
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const src = item.dataset.full;
-      const alt = item.querySelector('img')?.alt || '';
-      lbImg.src = src;
-      lbImg.alt = alt;
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  const close = () => {
-    lb.classList.remove('open');
-    lb.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    setTimeout(() => { lbImg.src = ''; }, 200);
-  };
-  lbClose.addEventListener('click', close);
-  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
 })();
 
 // Year

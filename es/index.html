@@ -542,62 +542,6 @@ body {
 }
 .endorse-role { font-size: 0.84rem; color: var(--text-muted); margin-top: 0.3rem; }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 3rem;
-}
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-elevated);
-  aspect-ratio: 1/1;
-  cursor: pointer;
-}
-.gallery-item img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform 700ms ease, filter 400ms ease;
-  filter: brightness(0.92);
-}
-.gallery-item:hover img { transform: scale(1.04); filter: brightness(1); }
-.gallery-item::after {
-  content: '';
-  position: absolute; inset: 0;
-  box-shadow: inset 0 0 0 1px var(--line);
-  pointer-events: none;
-  transition: box-shadow 240ms ease;
-}
-.gallery-item:hover::after { box-shadow: inset 0 0 0 2px var(--gold); }
-.gallery-item.feature { grid-column: span 2; aspect-ratio: 16/9; }
-
-.lightbox {
-  position: fixed; inset: 0;
-  background: oklch(0.08 0.005 80 / 0.96);
-  z-index: 2000;
-  display: none;
-  align-items: center; justify-content: center;
-  padding: 2rem;
-  backdrop-filter: blur(8px);
-}
-.lightbox.open { display: flex; }
-.lightbox img {
-  max-width: 96vw;
-  max-height: 90vh;
-  display: block;
-  box-shadow: 0 24px 80px oklch(0 0 0 / 0.6);
-}
-.lightbox-close {
-  position: absolute; top: 1.6rem; right: 1.6rem;
-  background: transparent; border: 1px solid var(--line);
-  color: var(--text-bright);
-  width: 48px; height: 48px;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-}
-.lightbox-close:hover { border-color: var(--gold); color: var(--gold); }
 
 .updates { background: var(--bg-surface); }
 .updates-form { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 2rem; max-width: 42rem; }
@@ -822,15 +766,11 @@ body {
   .hero-inner-content { max-width: 34rem; }
   .hero-photo { min-height: 100vh; order: 1; }
   .hero-photo::after { background: linear-gradient(to right, oklch(0.13 0.008 80 / 0.45) 0%, transparent 16%); }
-  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-  .gallery-item.feature { grid-column: span 2; aspect-ratio: 4/3; }
   .yardsign-grid { grid-template-columns: 1fr 1.1fr; gap: 4rem; }
 }
 
 @media (min-width: 1024px) {
   .endorse-grid { grid-template-columns: repeat(3, 1fr); }
-  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
-  .gallery-item.feature { grid-column: span 2; grid-row: span 2; aspect-ratio: 1/1; }
 }
 
 @media (max-width: 767px) {
@@ -911,7 +851,6 @@ body {
       <li><a href="#bio">Acerca</a></li>
       <li><a href="#issues">Prioridades</a></li>
       <li><a href="#endorsements">Respaldos</a></li>
-      <li><a href="#gallery">Galería</a></li>
       <li><a href="#volunteer">Voluntario</a></li>
       <li>
         <span class="lang-toggle">
@@ -940,7 +879,6 @@ body {
     <li><a href="#issues">Prioridades</a></li>
     <li><a href="#record">Trayectoria</a></li>
     <li><a href="#endorsements">Respaldos</a></li>
-    <li><a href="#gallery">Galería</a></li>
     <li><a href="#volunteer">Voluntario</a></li>
     <li><a href="#yardsign">Letrero</a></li>
     <li><a href="#donate" class="nav-cta">Donar</a></li>
@@ -1104,45 +1042,6 @@ body {
     <span class="placeholder-note" style="margin-top: 1.6rem;">[Pendiente: Respaldos reales con atribución antes del lanzamiento]</span>
   </div>
 </section>
-
-<section class="section" id="gallery">
-  <div class="container">
-    <div class="fade-up">
-      <div class="eyebrow">Galería</div>
-      <h2 class="section-title">En la carretera. En el trabajo. En la comunidad.</h2>
-      <p class="section-lead">Una mirada a la campaña y al candidato, en todo el Condado de Walla Walla.</p>
-    </div>
-    <div class="gallery-grid fade-up">
-      <div class="gallery-item feature" data-full="../assets/hero-truck-k9.jpg">
-        <img src="../assets/hero-truck-k9.jpg" alt="Ashley Daschofsky con compañero K9 en el Condado rural de Walla Walla" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="../assets/portrait-landscape.jpg">
-        <img src="../assets/portrait-landscape.jpg" alt="Ashley Daschofsky en el campo de Walla Walla" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="../assets/gallery-field-1.jpg">
-        <img src="../assets/gallery-field-1.jpg" alt="Ashley Daschofsky en un trigal de Walla Walla" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="../assets/family.jpg">
-        <img src="../assets/family.jpg" alt="Ashley Daschofsky con familia" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="../assets/gallery-truck-2.jpg">
-        <img src="../assets/gallery-truck-2.jpg" alt="Ashley Daschofsky con K9, segunda vista" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="../assets/gallery-portrait-1.jpg">
-        <img src="../assets/gallery-portrait-1.jpg" alt="Retrato de Ashley Daschofsky" loading="lazy">
-      </div>
-      <div class="gallery-item" data-full="../assets/gallery-field-2.jpg">
-        <img src="../assets/gallery-field-2.jpg" alt="Ashley Daschofsky en el campo" loading="lazy">
-      </div>
-    </div>
-    <span class="placeholder-note" style="margin-top: 1.6rem;">[Pendiente: Agregar fotos de eventos, uniforme, y comunidad según avance la campaña]</span>
-  </div>
-</section>
-
-<div class="lightbox" id="lightbox" role="dialog" aria-label="Visor de fotos" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">✕</button>
-  <img src="" alt="" id="lightboxImg">
-</div>
 
 <section class="section updates" id="updates">
   <div class="container">
@@ -1319,7 +1218,6 @@ body {
       <li><a href="#issues">Prioridades</a></li>
       <li><a href="#record">Trayectoria</a></li>
       <li><a href="#endorsements">Respaldos</a></li>
-      <li><a href="#gallery">Galería</a></li>
       <li><a href="#volunteer">Voluntario</a></li>
       <li><a href="#yardsign">Letrero</a></li>
       <li><a href="#donate">Donar</a></li>
@@ -1394,33 +1292,6 @@ body {
     });
   }, { threshold: 0.4 });
   document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
-})();
-
-(function() {
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbClose = document.getElementById('lightboxClose');
-  if (!lb || !lbImg) return;
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const src = item.dataset.full;
-      const alt = item.querySelector('img')?.alt || '';
-      lbImg.src = src;
-      lbImg.alt = alt;
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  const close = () => {
-    lb.classList.remove('open');
-    lb.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    setTimeout(() => { lbImg.src = ''; }, 200);
-  };
-  lbClose.addEventListener('click', close);
-  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
 })();
 
 document.getElementById('year').textContent = new Date().getFullYear();
