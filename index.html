@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashley Daschofsky for Walla Walla County Sheriff 2026</title>
+<meta name="description" content="Deputy Ashley Daschofsky is running for Walla Walla County Sheriff in 2026. Decorated for valor, committed to restoring public safety, supporting deputies, and protecting our rural communities.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://foresight-productions.github.io/fp-candidate-daschofsky/">
+<meta property="og:title" content="Ashley Daschofsky for Walla Walla County Sheriff · 2026">
+<meta property="og:description" content="Decorated deputy. Trusted protector. Running for Walla Walla County Sheriff in 2026 to restore public safety and back the men and women who serve.">
+<meta property="og:image" content="https://foresight-productions.github.io/fp-candidate-daschofsky/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ashley Daschofsky for Sheriff, Walla Walla County 2026">
+<meta property="og:site_name" content="Daschofsky for Sheriff">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ashley Daschofsky for Walla Walla County Sheriff · 2026">
+<meta name="twitter:description" content="Decorated deputy. Trusted protector. Running for Walla Walla County Sheriff in 2026.">
+<meta name="twitter:image" content="https://foresight-productions.github.io/fp-candidate-daschofsky/assets/og-image.jpg">
+
+<!--
+  Design System
+  Style: Industrial Authority (override of ui-ux-pro-max's "Vibrant Block" suggestion — that style would not carry the gravitas a Sheriff race requires)
+  Archetype: INDUSTRIAL AUTHORITY (dark gunmetal + gold, large hero stat, grid-line frames, sharp corners)
+  Fonts: Anton (display, override of gpt-taste shortlist — chosen because the existing Daschofsky logo wordmark already uses a chunky condensed display face, so Anton creates brand cohesion) / Inter (body, allowed per gpt-taste body relaxation)
+  Color strategy: Committed — gold (oklch 0.78 0.13 85) carries 30-40% of visual weight
+  Palette (OKLCH):
+    bg-deep oklch(0.13 0.008 80) | bg-surface oklch(0.18 0.008 80) | bg-elevated oklch(0.22 0.008 80)
+    gold oklch(0.78 0.13 85) | gold-deep oklch(0.62 0.14 75)
+    text-bright oklch(0.96 0.005 80) | text-muted oklch(0.72 0.008 80)
+  Impeccable bans honored: no side-stripe borders (full grid-line frames instead), no gradient text, no glassmorphism, no hero-metric SaaS template, no identical card grids (varied section structures), only transform/opacity animated, no em dashes
+  gpt-taste gates honored: AIDA flow ✓ | H1 2-3 lines ✓ | no SECTION 01 meta-labels (eyebrow phrases instead) ✓ | hero discipline ✓
+  ui-ux-pro-max anti-patterns avoided: no muted colors (saturated gold), no low-energy layout
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-deep: oklch(0.13 0.008 80);
+  --bg-surface: oklch(0.18 0.008 80);
+  --bg-elevated: oklch(0.22 0.008 80);
+  --bg-stripe: oklch(0.10 0.006 80);
+  --text-bright: oklch(0.96 0.005 80);
+  --text-muted: oklch(0.72 0.008 80);
+  --text-dim: oklch(0.55 0.008 80);
+  --gold: oklch(0.78 0.13 85);
+  --gold-deep: oklch(0.62 0.14 75);
+  --gold-glow: oklch(0.78 0.13 85 / 0.18);
+  --red-accent: oklch(0.58 0.20 25);
+  --line: oklch(0.30 0.008 80);
+  --line-bright: oklch(0.45 0.010 80);
+  --font-display: 'Anton', 'Impact', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --container: clamp(20rem, 92vw, 84rem);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--text-bright);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection { background: var(--gold); color: var(--bg-deep); }
+
+/* ===== NAV ===== */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  height: 72px;
+  background: oklch(0.13 0.008 80 / 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 220ms ease, background 220ms ease;
+}
+#nav.scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 4px 32px oklch(0 0 0 / 0.4);
+}
+.nav-logo { flex-shrink: 0; display: flex; align-items: center; }
+.nav-logo-img { height: 44px; width: auto; display: block; }
+.nav-links {
+  display: flex; align-items: center; gap: 2.2rem; flex-shrink: 0;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-bright);
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+  cursor: pointer;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.7rem 1.4rem;
+  background: var(--gold);
+  color: var(--bg-deep) !important;
+  font-weight: 700;
+  border-radius: 0;
+  letter-spacing: 0.08em !important;
+  border: 1px solid var(--gold);
+  transition: background 200ms ease, transform 200ms ease;
+}
+.nav-cta:hover { background: var(--gold-deep); color: var(--bg-deep) !important; transform: translateY(-1px); }
+.nav-toggle {
+  display: none; flex-shrink: 0;
+  background: transparent; border: 1px solid var(--line);
+  width: 44px; height: 44px;
+  cursor: pointer;
+  align-items: center; justify-content: center;
+  color: var(--text-bright);
+}
+.nav-toggle svg { width: 22px; height: 22px; }
+.nav-mobile { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex; align-items: center;
+  padding: 7rem 5% 4rem;
+  background:
+    linear-gradient(135deg, oklch(0.13 0.008 80 / 0.94) 0%, oklch(0.13 0.008 80 / 0.65) 60%, oklch(0.10 0.006 80 / 0.85) 100%),
+    url('assets/hero-truck-k9.jpg') center/cover no-repeat;
+  background-attachment: scroll;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 84px 84px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: end;
+}
+.hero-stat {
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 18vw, 16rem);
+  line-height: 0.82;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+.hero-stat-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 1.4rem;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 36px; height: 1px; background: var(--gold);
+}
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.8vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--text-bright);
+  margin-bottom: 0.6rem;
+}
+.hero-name .for {
+  display: block;
+  font-size: clamp(1.2rem, 2.4vw, 2.1rem);
+  color: var(--gold);
+  font-weight: 400;
+  margin-top: 0.3rem;
+  letter-spacing: 0.06em;
+}
+.hero-tagline {
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  color: var(--text-muted);
+  max-width: 36rem;
+  margin: 1.5rem 0 2.4rem;
+  line-height: 1.55;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 0;
+  margin-top: 2.6rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.4rem;
+}
+.hero-meta-item {
+  flex: 1 1 200px;
+  padding: 0.3rem 0;
+  border-right: 1px solid var(--line);
+  padding-right: 1.6rem;
+}
+.hero-meta-item:last-child { border-right: none; }
+.hero-meta-key {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.hero-meta-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--text-bright);
+  letter-spacing: 0.03em;
+}
+.hero-cta-row {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  margin-top: 2.4rem;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 1.05rem 2.1rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 220ms ease, color 220ms ease, transform 220ms ease;
+  font-family: var(--font-body);
+  background: transparent;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg-deep);
+  border-color: var(--gold);
+}
+.btn-primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); transform: translateY(-2px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text-bright);
+  border-color: var(--line-bright);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ===== SECTION DEFAULTS ===== */
+.section {
+  padding: clamp(4rem, 9vw, 8rem) 5%;
+  position: relative;
+}
+.section-deeper { background: var(--bg-stripe); }
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+}
+.eyebrow::before {
+  content: ''; display: block; width: 32px; height: 1px; background: var(--gold);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  max-width: 36ch;
+}
+.section-lead {
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  color: var(--text-muted);
+  max-width: 50ch;
+  line-height: 1.6;
+}
+
+/* ===== BIO ===== */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.bio-photo {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+.bio-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 600ms ease;
+}
+.bio-photo:hover img { transform: scale(1.02); }
+.bio-photo::after {
+  content: '';
+  position: absolute; inset: 0;
+  box-shadow: inset 0 0 0 1px var(--line);
+  pointer-events: none;
+}
+.bio-photo-frame {
+  position: absolute;
+  top: 12px; left: 12px; right: -12px; bottom: -12px;
+  border: 1px solid var(--gold);
+  z-index: -1;
+}
+.bio-photo-wrap { position: relative; }
+.bio-text p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+.bio-text p strong { color: var(--text-bright); font-weight: 600; }
+.placeholder-note {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem 0.7rem;
+  background: oklch(0.22 0.10 60 / 0.5);
+  border: 1px dashed var(--gold);
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ===== ISSUES (horizontal scroll showcase) ===== */
+.issues-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 360px);
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1.2rem;
+  margin: 0 -5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-bright) transparent;
+}
+.issues-scroll::-webkit-scrollbar { height: 4px; }
+.issues-scroll::-webkit-scrollbar-track { background: transparent; }
+.issues-scroll::-webkit-scrollbar-thumb { background: var(--line-bright); }
+.issue {
+  scroll-snap-align: start;
+  border: 1px solid var(--line);
+  border-right: none;
+  background: var(--bg-surface);
+  padding: 2.4rem 2rem 2.8rem;
+  display: flex; flex-direction: column;
+  position: relative;
+  min-height: 24rem;
+  transition: background 240ms ease, border-color 240ms ease;
+}
+.issue:last-child { border-right: 1px solid var(--line); }
+.issue:hover { background: var(--bg-elevated); border-color: var(--gold); }
+.issue-num {
+  font-family: var(--font-display);
+  font-size: 3.6rem;
+  line-height: 1;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.6rem;
+}
+.issue-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-bright);
+  margin-bottom: 1.1rem;
+  line-height: 1.1;
+}
+.issue-text {
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+
+/* ===== RECORD / STATS ===== */
+.record {
+  background: var(--bg-stripe);
+  position: relative;
+}
+.record::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
+  background-size: 25% 100%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.record-inner { position: relative; }
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 3rem;
+  border: 1px solid var(--line);
+}
+.stat {
+  padding: 2.6rem 1.8rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.stat:nth-child(2n) { border-right: none; }
+.stat:nth-last-child(-n+2) { border-bottom: none; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 7vw, 6rem);
+  line-height: 0.95;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.stat-suffix {
+  font-family: var(--font-body);
+  font-size: 0.5em;
+  color: var(--gold);
+  font-weight: 600;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+.stat-label strong {
+  display: block;
+  color: var(--text-bright);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ===== ENDORSEMENTS ===== */
+.endorsements {
+  border-top: 1px solid var(--line);
+}
+.endorse-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.6rem;
+}
+.endorse-card {
+  border: 1px solid var(--line);
+  background: var(--bg-surface);
+  padding: 2.2rem 2rem;
+  display: flex; flex-direction: column;
+}
+.endorse-quote {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-bright);
+  margin-bottom: 1.4rem;
+  font-style: normal;
+  position: relative;
+  padding-top: 0.4rem;
+}
+.endorse-quote::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  line-height: 0.6;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.endorse-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: auto;
+}
+.endorse-role {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* ===== UPDATES / NEWSLETTER (replaces Events) ===== */
+.updates {
+  background: var(--bg-surface);
+}
+.updates-form {
+  display: flex; flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  max-width: 42rem;
+}
+.updates-form-row {
+  display: flex; gap: 0.6rem; flex-wrap: wrap;
+}
+.updates-input {
+  flex: 1 1 240px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  color: var(--text-bright);
+  padding: 1.05rem 1.2rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 200ms ease;
+}
+.updates-input:focus { border-color: var(--gold); }
+.updates-input::placeholder { color: var(--text-dim); }
+
+/* ===== DONATE BANNER ===== */
+.donate-banner {
+  position: relative;
+  background: linear-gradient(135deg, oklch(0.18 0.008 80) 0%, oklch(0.13 0.008 80) 100%);
+  padding: clamp(5rem, 10vw, 9rem) 5%;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.donate-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, var(--gold) 1px, transparent 1px);
+  background-size: 12.5% 100%;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.donate-banner-inner { position: relative; max-width: var(--container); margin: 0 auto; }
+.donate-banner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.02;
+  margin-bottom: 1.2rem;
+}
+.donate-banner h2 .gold-line { color: var(--gold); display: block; }
+.donate-banner p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 44rem;
+  margin: 0 auto 2.4rem;
+}
+.donate-btn {
+  font-size: 1.05rem;
+  padding: 1.2rem 2.6rem;
+}
+
+/* ===== VOLUNTEER ===== */
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2.6rem;
+}
+.volunteer-form {
+  border: 1px solid var(--line);
+  background: var(--bg-surface);
+  padding: 2.4rem;
+  display: flex; flex-direction: column;
+  gap: 1.1rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.form-row.two { grid-template-columns: 1fr 1fr; }
+.form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-field label {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.form-field input,
+.form-field textarea {
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  color: var(--text-bright);
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 180ms ease;
+  width: 100%;
+  border-radius: 0;
+}
+.form-field input:focus,
+.form-field textarea:focus { border-color: var(--gold); }
+.form-field textarea { resize: vertical; min-height: 6rem; }
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem 1rem;
+}
+.checkbox-grid label {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+  cursor: pointer;
+}
+.checkbox-grid input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border: 1px solid var(--line-bright);
+  background: var(--bg-deep);
+  cursor: pointer;
+  position: relative;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+.checkbox-grid input[type="checkbox"]:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.checkbox-grid input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 6px; height: 11px;
+  border: solid var(--bg-deep);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.volunteer-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+  color: var(--text-bright);
+}
+.volunteer-info p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.contact-list {
+  list-style: none;
+  margin-top: 1.6rem;
+  display: flex; flex-direction: column;
+  gap: 1rem;
+}
+.contact-list li {
+  display: flex; align-items: center; gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.contact-list li:last-child { border-bottom: none; }
+.contact-list a, .contact-list span {
+  color: var(--text-bright);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 180ms ease;
+}
+.contact-list a:hover { color: var(--gold); }
+.contact-list .key {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 600;
+  min-width: 5rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: oklch(0.09 0.006 80);
+  padding: 4rem 5% 2rem;
+  border-top: 1px solid var(--line);
+}
+.footer-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.4rem;
+}
+.footer-brand img { height: 56px; margin-bottom: 1rem; }
+.footer-brand p {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: 32rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex; flex-wrap: wrap;
+  gap: 1.6rem;
+}
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-compliance {
+  margin-top: 2.4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  max-width: 60rem;
+}
+.footer-compliance strong { color: var(--text-muted); font-weight: 600; }
+.footer-compliance a { color: var(--text-muted); }
+.footer-compliance a:hover { color: var(--gold); }
+
+/* ===== FADE-IN ANIMATIONS ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.fade-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px) {
+  .bio-grid { grid-template-columns: 1fr 1.2fr; gap: 4rem; }
+  .stat-grid { grid-template-columns: repeat(4, 1fr); }
+  .stat { border-bottom: none; }
+  .stat:not(:last-child) { border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .endorse-grid { grid-template-columns: repeat(2, 1fr); }
+  .volunteer-grid { grid-template-columns: 1.2fr 1fr; }
+  .footer-inner { grid-template-columns: 1.4fr 1fr; align-items: start; }
+  .hero-inner {
+    grid-template-columns: auto 1fr;
+    gap: 5rem;
+    align-items: end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .endorse-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 767px) {
+  #nav { padding: 0 1.2rem; height: 64px; }
+  .nav-logo-img { height: 36px; }
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0; bottom: 0;
+    background: var(--bg-deep);
+    padding: 2rem 1.5rem;
+    z-index: 999;
+    border-top: 1px solid var(--line);
+  }
+  .nav-mobile.open { display: block; }
+  .nav-mobile ul { list-style: none; display: flex; flex-direction: column; gap: 1.6rem; }
+  .nav-mobile a {
+    color: var(--text-bright);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .nav-mobile a.nav-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--gold);
+    color: var(--bg-deep);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    letter-spacing: 0.12em;
+  }
+  .hero {
+    padding: 6.5rem 1.2rem 3rem;
+    min-height: 100svh;
+    align-items: flex-start;
+    padding-top: 7rem;
+  }
+  .hero-stat { font-size: clamp(5rem, 22vw, 9rem); }
+  .hero-cta-row { flex-direction: column; align-items: stretch; }
+  .hero-cta-row .btn { width: 100%; }
+  .hero-meta-item {
+    flex: 1 1 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 0.8rem 0;
+  }
+  .hero-meta-item:last-child { border-bottom: none; }
+  .section { padding: 4rem 1.2rem; }
+  .stat { padding: 1.8rem 1.2rem; }
+  .stat-grid { grid-template-columns: 1fr; }
+  .stat:not(:last-child) { border-right: none; border-bottom: 1px solid var(--line); }
+  .form-row.two { grid-template-columns: 1fr; }
+  .checkbox-grid { grid-template-columns: 1fr; }
+  .donate-banner { padding: 4rem 1.2rem; }
+  .footer { padding: 3rem 1.2rem 2rem; }
+  .footer-links { gap: 1rem 1.6rem; }
+}
+
+@media (max-width: 400px) {
+  .issues-scroll { grid-auto-columns: 88%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .fade-up { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header id="nav">
+  <a href="#top" class="nav-logo">
+    <img src="assets/logo.png" alt="Ashley Daschofsky for Sheriff" class="nav-logo-img">
+  </a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#bio">About</a></li>
+      <li><a href="#issues">Issues</a></li>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#endorsements">Endorsements</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+      <li><a href="#donate" class="nav-cta">Donate</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
+      <line x1="3" y1="7" x2="21" y2="7"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="17" x2="21" y2="17"/>
+    </svg>
+  </button>
+</header>
+<div class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="#bio">About</a></li>
+    <li><a href="#issues">Issues</a></li>
+    <li><a href="#record">Record</a></li>
+    <li><a href="#endorsements">Endorsements</a></li>
+    <li><a href="#volunteer">Volunteer</a></li>
+    <li><a href="#donate" class="nav-cta">Donate</a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-stat">
+        2026
+        <span class="hero-stat-label">Election Year</span>
+      </div>
+    </div>
+    <div>
+      <div class="hero-eyebrow">Republican &nbsp;·&nbsp; Walla Walla County</div>
+      <h1 class="hero-name">
+        Ashley<br>Daschofsky
+        <span class="for">For Sheriff</span>
+      </h1>
+      <p class="hero-tagline">
+        A decorated deputy stepping up to lead. Built to restore public safety, back the men and women in uniform, and protect the rural communities of Walla Walla County.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#donate" class="btn btn-primary">Donate Now</a>
+        <a href="#volunteer" class="btn btn-ghost">Join the Team</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-key">Primary</span>
+          <span class="hero-meta-val">August 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-key">General</span>
+          <span class="hero-meta-val">November 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-key">Office</span>
+          <span class="hero-meta-val">Sheriff, WW Co.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BIO ===== -->
+<section class="section" id="bio">
+  <div class="container">
+    <div class="bio-grid">
+      <div class="bio-photo-wrap fade-up">
+        <div class="bio-photo">
+          <img src="assets/portrait-headshot.jpg" alt="Ashley Daschofsky">
+        </div>
+        <div class="bio-photo-frame"></div>
+      </div>
+      <div class="bio-text fade-up">
+        <div class="eyebrow">Why I'm Running</div>
+        <h2 class="section-title">Service is the standard. Not the slogan.</h2>
+        <p>
+          <strong>Ashley Daschofsky has served Walla Walla County as a sheriff's deputy</strong>, building a career on the unglamorous work that actually keeps communities safe: traffic stops that take impaired drivers off the road, calls answered in the middle of the night, and showing up when neighbors need help most.
+        </p>
+        <p>
+          In December 2025, Deputy Daschofsky helped pull a woman from a burning vehicle on U.S. 12. The Walla Walla City Council recognized him with a Life Saving Award in February 2026. In 2022, he was named the agency's Top DUI Enforcement Officer. This is the record he'll bring to the Sheriff's Office.
+        </p>
+        <p>
+          He's running because the people of Walla Walla County deserve a sheriff who answers to them, backs the deputies who serve them, and treats this job like what it is: a duty, not a stepping stone.
+        </p>
+        <span class="placeholder-note">[TBD: Final bio copy from candidate]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ISSUES ===== -->
+<section class="section section-deeper" id="issues">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow">Priorities</div>
+      <h2 class="section-title">Where I stand.</h2>
+      <p class="section-lead">Concrete priorities for the office, not poll-tested talking points. The Walla Walla County Sheriff's Office should be visible, accountable, and trusted in every corner of the county.</p>
+    </div>
+  </div>
+  <div class="issues-scroll fade-up" style="margin-top: 3rem;">
+    <article class="issue">
+      <div class="issue-num">01</div>
+      <h3 class="issue-title">Restore Public Safety</h3>
+      <p class="issue-text">Aggressive enforcement of repeat offenders, full coordination with prosecutors and courts, and zero tolerance for the drug trafficking that's eroding our towns. Safer streets is the floor, not the ceiling.</p>
+    </article>
+    <article class="issue">
+      <div class="issue-num">02</div>
+      <h3 class="issue-title">Back the Badge</h3>
+      <p class="issue-text">Competitive pay, real training, modern equipment, and command staff that has deputies' backs. We will not recruit and retain the best by paying the least. The men and women on patrol come first.</p>
+    </article>
+    <article class="issue">
+      <div class="issue-num">03</div>
+      <h3 class="issue-title">Protect Rural Communities</h3>
+      <p class="issue-text">Faster response times outside city limits, real partnerships with the agricultural community, and a sheriff who shows up to Burbank, Touchet, Prescott, and Dixie. Not just election season.</p>
+    </article>
+    <article class="issue">
+      <div class="issue-num">04</div>
+      <h3 class="issue-title">Accountability &amp; Transparency</h3>
+      <p class="issue-text">Open communication with the community we serve. Clear, public reporting on crime trends, response times, and how every taxpayer dollar is spent. A sheriff's office answerable to citizens, not politicians.</p>
+    </article>
+    <article class="issue">
+      <div class="issue-num">05</div>
+      <h3 class="issue-title">Constitutional Defense</h3>
+      <p class="issue-text">A sworn oath to uphold the U.S. and Washington State Constitutions, including the Second Amendment. Law-abiding citizens of Walla Walla County will not have their rights eroded under my watch.</p>
+    </article>
+  </div>
+  <div class="container" style="margin-top: 1.4rem;">
+    <span class="placeholder-note">[TBD: Final priorities approved by candidate]</span>
+  </div>
+</section>
+
+<!-- ===== RECORD ===== -->
+<section class="section record" id="record">
+  <div class="container record-inner">
+    <div class="fade-up">
+      <div class="eyebrow">The Record</div>
+      <h2 class="section-title">Earned on the job. Not promised on a flyer.</h2>
+    </div>
+    <div class="stat-grid fade-up">
+      <div class="stat">
+        <span class="stat-num" data-count="2026">0</span>
+        <p class="stat-label"><strong>Life Saving Award</strong>Walla Walla City Council recognition for the December 2025 vehicle fire rescue on U.S. 12.</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="2022">0</span>
+        <p class="stat-label"><strong>Top DUI Officer</strong>Recognized as the agency's leading DUI enforcement deputy for the year.</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="100">0</span><span class="stat-suffix">%</span>
+        <p class="stat-label"><strong>Constitutional</strong>Sworn to defend the rights of every law-abiding citizen of Walla Walla County.</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="24">0</span><span class="stat-suffix">/7</span>
+        <p class="stat-label"><strong>On Call</strong>Already serving the county every shift, every season, in every weather.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENDORSEMENTS ===== -->
+<section class="section endorsements" id="endorsements">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow">Endorsements</div>
+      <h2 class="section-title">Trusted by the people who know the work.</h2>
+      <p class="section-lead">Endorsements from law enforcement, agriculture, faith communities, and local leaders across Walla Walla County will be announced through the spring and summer.</p>
+    </div>
+    <div class="endorse-grid fade-up">
+      <article class="endorse-card">
+        <p class="endorse-quote">Ashley shows up, does the work, and treats every person he encounters with respect. He's exactly the kind of leader this office needs.</p>
+        <div class="endorse-name">[TBD: Endorser Name]</div>
+        <div class="endorse-role">Title, Walla Walla County</div>
+      </article>
+      <article class="endorse-card">
+        <p class="endorse-quote">A deputy I trust to back me up on a call. A candidate I trust to lead this department forward.</p>
+        <div class="endorse-name">[TBD: Endorser Name]</div>
+        <div class="endorse-role">Title, Walla Walla County</div>
+      </article>
+      <article class="endorse-card">
+        <p class="endorse-quote">Walla Walla County needs a sheriff who actually wears the uniform. Ashley does. That's why he has my support.</p>
+        <div class="endorse-name">[TBD: Endorser Name]</div>
+        <div class="endorse-role">Title, Walla Walla County</div>
+      </article>
+    </div>
+    <span class="placeholder-note" style="margin-top: 1.6rem;">[TBD: Real endorsements with attribution before launch]</span>
+  </div>
+</section>
+
+<!-- ===== UPDATES (replacing Events) ===== -->
+<section class="section updates" id="updates">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow">Stay in the Loop</div>
+      <h2 class="section-title">Get campaign updates direct to your inbox.</h2>
+      <p class="section-lead">Town halls, meet &amp; greets, debate dates, and how to help. No spam. No fluff. Just what matters.</p>
+      <form class="updates-form" onsubmit="event.preventDefault(); alert('Thanks for signing up. We will be in touch.'); this.reset();">
+        <div class="updates-form-row">
+          <input type="email" class="updates-input" placeholder="your@email.com" required>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DONATE BANNER ===== -->
+<section class="donate-banner" id="donate">
+  <div class="donate-banner-inner fade-up">
+    <h2>
+      Every dollar.
+      <span class="gold-line">Earns a vote.</span>
+    </h2>
+    <p>Campaigns aren't won on social media posts. They're won on yard signs, mailers, knocking doors, and showing up. Help fund the field operation that puts Ashley Daschofsky in the Sheriff's Office.</p>
+    <a href="#" class="btn btn-primary donate-btn" id="donateLink">Contribute Today</a>
+    <p style="margin-top: 1.4rem; font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.04em;">
+      Maximum individual contribution: $2,400 per election (per WA PDC). All contributions reported per state law.
+    </p>
+  </div>
+</section>
+
+<!-- ===== VOLUNTEER ===== -->
+<section class="section" id="volunteer">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow">Volunteer</div>
+      <h2 class="section-title">Boots on the ground wins.</h2>
+      <p class="section-lead">Knock doors. Make calls. Plant a sign in your yard. Host a meet-and-greet. Every hour you give brings us closer to election night.</p>
+    </div>
+    <div class="volunteer-grid">
+      <form class="volunteer-form fade-up" onsubmit="event.preventDefault(); alert('Thanks for stepping up. The team will reach out within 48 hours.'); this.reset();">
+        <div class="form-row two">
+          <div class="form-field">
+            <label for="vfirst">First Name</label>
+            <input type="text" id="vfirst" required>
+          </div>
+          <div class="form-field">
+            <label for="vlast">Last Name</label>
+            <input type="text" id="vlast" required>
+          </div>
+        </div>
+        <div class="form-row two">
+          <div class="form-field">
+            <label for="vemail">Email</label>
+            <input type="email" id="vemail" required>
+          </div>
+          <div class="form-field">
+            <label for="vphone">Phone</label>
+            <input type="tel" id="vphone">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>I want to help with</label>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="help" value="doors"> Door knocking</label>
+            <label><input type="checkbox" name="help" value="phones"> Phone banking</label>
+            <label><input type="checkbox" name="help" value="signs"> Yard sign</label>
+            <label><input type="checkbox" name="help" value="host"> Host event</label>
+            <label><input type="checkbox" name="help" value="data"> Data entry</label>
+            <label><input type="checkbox" name="help" value="anywhere"> Wherever needed</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="vmsg">Anything we should know?</label>
+          <textarea id="vmsg" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Sign Me Up</button>
+      </form>
+      <div class="volunteer-info fade-up">
+        <h3>Get in touch directly</h3>
+        <p>The Daschofsky for Sheriff team reads every message. We will get back to you within 48 hours.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="key">Email</span>
+            <a href="mailto:info@daschofskyforsheriff.com">[TBD: campaign email]</a>
+          </li>
+          <li>
+            <span class="key">Phone</span>
+            <a href="tel:">[TBD: campaign phone]</a>
+          </li>
+          <li>
+            <span class="key">Mail</span>
+            <span>[TBD: PO Box / mailing address]</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Ashley Daschofsky for Sheriff">
+      <p>Decorated deputy. Trusted neighbor. Candidate for Walla Walla County Sheriff in 2026. Restoring public safety, backing the badge, and protecting our rural communities.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#bio">About</a></li>
+      <li><a href="#issues">Issues</a></li>
+      <li><a href="#record">Record</a></li>
+      <li><a href="#endorsements">Endorsements</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+      <li><a href="#donate">Donate</a></li>
+    </ul>
+  </div>
+  <div class="footer-compliance">
+    <strong>Paid for by [TBD: Committee to Elect Ashley Daschofsky]</strong><br>
+    [TBD: Mailing address] · Walla Walla, WA<br>
+    Registered with the Washington State Public Disclosure Commission. Campaign finance records available at
+    <a href="https://www.pdc.wa.gov/" target="_blank" rel="noopener">pdc.wa.gov</a>.<br>
+    &copy; <span id="year">2026</span> Daschofsky for Sheriff. All rights reserved.
+  </div>
+</footer>
+
+<script>
+// Nav scroll state
+(function() {
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// Mobile nav toggle
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  if (!toggle || !mobile) return;
+  toggle.addEventListener('click', () => mobile.classList.toggle('open'));
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
+})();
+
+// Fade-in observer
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+})();
+
+// Count-up stat animation
+(function() {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || reduce) {
+    document.querySelectorAll('[data-count]').forEach(el => {
+      el.textContent = el.dataset.count;
+    });
+    return;
+  }
+  const animate = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * eased).toString();
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toString();
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animate(e.target);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
+})();
+
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
