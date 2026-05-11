@@ -292,6 +292,47 @@ body {
   display: flex; flex-wrap: wrap; gap: 1rem;
   margin-top: 2.4rem;
 }
+.hero-credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 2.4rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.4rem;
+}
+.hero-credential {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  padding-right: 1.2rem;
+  border-right: 1px solid var(--line);
+}
+.hero-credential + .hero-credential { padding-left: 1.5rem; }
+.hero-credential:last-child { border-right: none; padding-right: 0; }
+.hero-credential-year {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  line-height: 1;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.hero-credential-text {
+  font-size: 0.74rem;
+  color: var(--text-bright);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.hero-credential-text small {
+  display: block;
+  color: var(--text-dim);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+  margin-top: 0.3rem;
+}
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 1.05rem 2.1rem;
@@ -765,8 +806,8 @@ body {
   .volunteer-grid { grid-template-columns: 1.2fr 1fr; }
   .footer-inner { grid-template-columns: 1.4fr 1fr; align-items: start; }
   .hero { grid-template-columns: 1.05fr 1fr; }
-  .hero-content { padding: 9rem 4rem 4rem 6%; order: 0; }
-  .hero-inner-content { max-width: 34rem; }
+  .hero-content { padding: 7rem 3rem 3.5rem 6%; order: 0; }
+  .hero-inner-content { max-width: 42rem; }
   .hero-photo { min-height: 100vh; order: 1; }
   .hero-photo::after { background: linear-gradient(to right, oklch(0.13 0.008 80 / 0.45) 0%, transparent 16%); }
   .yardsign-grid { grid-template-columns: 1fr 1.1fr; gap: 4rem; }
@@ -821,6 +862,10 @@ body {
   .hero-meta-item { border-right: none; border-bottom: 1px solid var(--line); padding: 0.8rem 0; }
   .hero-meta-item + .hero-meta-item { padding-left: 0; }
   .hero-meta-item:last-child { border-bottom: none; }
+  .hero-credentials { grid-template-columns: 1fr; }
+  .hero-credential { border-right: none; border-bottom: 1px solid var(--line); padding: 0.7rem 0; }
+  .hero-credential + .hero-credential { padding-left: 0; padding-top: 0.7rem; }
+  .hero-credential:last-child { border-bottom: none; }
   .section { padding: 4rem 1.2rem; }
   .stat { padding: 1.8rem 1.2rem; }
   .stat-grid { grid-template-columns: 1fr; }
@@ -904,6 +949,16 @@ body {
       <div class="hero-cta-row">
         <a href="#donate" class="btn btn-primary">Donar Ahora</a>
         <a href="#volunteer" class="btn btn-ghost">Únete al Equipo</a>
+      </div>
+      <div class="hero-credentials">
+        <div class="hero-credential">
+          <span class="hero-credential-year">2026</span>
+          <span class="hero-credential-text">Premio por Salvar Vidas<small>Concejo Municipal de Walla Walla</small></span>
+        </div>
+        <div class="hero-credential">
+          <span class="hero-credential-year">2022</span>
+          <span class="hero-credential-text">Mejor Oficial DUI<small>Oficina del Sheriff del Condado</small></span>
+        </div>
       </div>
       <div class="hero-meta">
         <div class="hero-meta-item">
