@@ -847,6 +847,10 @@ body {
 .sb-surface { background: var(--bg-surface); }
 .sb-medium  { background: var(--bg-medium); }
 
+.form-msg { margin-top: 0.9rem; font-size: 0.875rem; padding: 0.75rem 1rem; display: none; border: 1px solid transparent; }
+.form-msg:not(:empty) { display: block; }
+.form-msg-ok { background: oklch(0.22 0.04 145 / 0.5); border-color: oklch(0.48 0.14 145); color: oklch(0.82 0.13 145); }
+.form-msg-err { background: oklch(0.22 0.04 25 / 0.5); border-color: oklch(0.52 0.16 25); color: oklch(0.85 0.13 25); }
 .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 700ms ease, transform 700ms ease; }
 .fade-up.in { opacity: 1; transform: translateY(0); }
 
@@ -1318,56 +1322,58 @@ body {
       <div class="yardsign-visual fade-up">
         <img src="../assets/logo.png" alt="Letrero de Daschofsky para Sheriff">
       </div>
-      <form class="volunteer-form fade-up" onsubmit="event.preventDefault(); alert('Gracias. La campaña entregará tu letrero en una semana.'); this.reset();">
+      <form class="volunteer-form fade-up" id="yardsignForm" onsubmit="handleFormSubmit(event, this, 'yardsignMsg')">
+        <input type="hidden" name="form_type" value="yardsign">
         <div class="form-row two">
           <div class="form-field">
             <label for="yfirst">Nombre</label>
-            <input type="text" id="yfirst" required>
+            <input type="text" id="yfirst" name="first_name" required>
           </div>
           <div class="form-field">
             <label for="ylast">Apellido</label>
-            <input type="text" id="ylast" required>
+            <input type="text" id="ylast" name="last_name" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="yemail">Correo</label>
-            <input type="email" id="yemail" required>
+            <input type="email" id="yemail" name="email" required>
           </div>
           <div class="form-field">
             <label for="yphone">Teléfono</label>
-            <input type="tel" id="yphone" required>
+            <input type="tel" id="yphone" name="phone" required>
           </div>
         </div>
         <div class="form-field">
           <label for="yaddress">Dirección (para entrega)</label>
-          <input type="text" id="yaddress" required>
+          <input type="text" id="yaddress" name="address" required>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="ycity">Ciudad</label>
-            <input type="text" id="ycity" required>
+            <input type="text" id="ycity" name="city" required>
           </div>
           <div class="form-field">
             <label for="yzip">Código Postal</label>
-            <input type="text" id="yzip" inputmode="numeric" required>
+            <input type="text" id="yzip" name="zip" inputmode="numeric" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="yqty">¿Cuántos letreros?</label>
-            <input type="number" id="yqty" min="1" max="10" value="1" required>
+            <input type="number" id="yqty" name="quantity" min="1" max="10" value="1" required>
           </div>
           <div class="form-field">
             <label for="ytype">Tipo de letrero</label>
-            <input type="text" id="ytype" placeholder="Estándar / Grande / Cualquiera" value="Cualquiera">
+            <input type="text" id="ytype" name="sign_type" placeholder="Estándar / Grande / Cualquiera" value="Cualquiera">
           </div>
         </div>
         <div class="form-field">
           <label for="ynotes">Notas de entrega (opcional)</label>
-          <textarea id="ynotes" rows="2" placeholder="Mejor hora para dejarlo, dónde dejarlo, etc."></textarea>
+          <textarea id="ynotes" name="notes" rows="2" placeholder="Mejor hora para dejarlo, dónde dejarlo, etc."></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Solicitar Letrero</button>
+        <div class="form-msg" id="yardsignMsg"></div>
       </form>
     </div>
   </div>
@@ -1407,43 +1413,45 @@ body {
       <p class="section-lead">Toca puertas. Haz llamadas. Pon un letrero en tu jardín. Hospeda un encuentro. Cada hora que des nos acerca más a la noche de elección.</p>
     </div>
     <div class="volunteer-grid">
-      <form class="volunteer-form fade-up" onsubmit="event.preventDefault(); alert('Gracias por dar el paso. El equipo te contactará dentro de 48 horas.'); this.reset();">
+      <form class="volunteer-form fade-up" id="volunteerForm" onsubmit="handleFormSubmit(event, this, 'volunteerMsg')">
+        <input type="hidden" name="form_type" value="volunteer">
         <div class="form-row two">
           <div class="form-field">
             <label for="vfirst">Nombre</label>
-            <input type="text" id="vfirst" required>
+            <input type="text" id="vfirst" name="first_name" required>
           </div>
           <div class="form-field">
             <label for="vlast">Apellido</label>
-            <input type="text" id="vlast" required>
+            <input type="text" id="vlast" name="last_name" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="vemail">Correo</label>
-            <input type="email" id="vemail" required>
+            <input type="email" id="vemail" name="email" required>
           </div>
           <div class="form-field">
             <label for="vphone">Teléfono</label>
-            <input type="tel" id="vphone">
+            <input type="tel" id="vphone" name="phone">
           </div>
         </div>
         <div class="form-field">
           <label>Quiero ayudar con</label>
           <div class="checkbox-grid">
-            <label><input type="checkbox" name="help" value="doors"> Tocar puertas</label>
-            <label><input type="checkbox" name="help" value="phones"> Llamadas telefónicas</label>
-            <label><input type="checkbox" name="help" value="signs"> Letrero de jardín</label>
-            <label><input type="checkbox" name="help" value="host"> Hospedar evento</label>
-            <label><input type="checkbox" name="help" value="data"> Entrada de datos</label>
-            <label><input type="checkbox" name="help" value="anywhere"> Donde se necesite</label>
+            <label><input type="checkbox" name="interests" value="Tocar puertas"> Tocar puertas</label>
+            <label><input type="checkbox" name="interests" value="Llamadas telefónicas"> Llamadas telefónicas</label>
+            <label><input type="checkbox" name="interests" value="Letrero de jardín"> Letrero de jardín</label>
+            <label><input type="checkbox" name="interests" value="Hospedar evento"> Hospedar evento</label>
+            <label><input type="checkbox" name="interests" value="Entrada de datos"> Entrada de datos</label>
+            <label><input type="checkbox" name="interests" value="Donde se necesite"> Donde se necesite</label>
           </div>
         </div>
         <div class="form-field">
           <label for="vmsg">¿Algo que debamos saber?</label>
-          <textarea id="vmsg" rows="3"></textarea>
+          <textarea id="vmsg" name="message" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Anótame</button>
+        <div class="form-msg" id="volunteerMsg"></div>
       </form>
       <div class="volunteer-info fade-up">
         <h3>Contáctanos directamente</h3>
@@ -1554,6 +1562,53 @@ body {
 })();
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Form submission
+async function handleFormSubmit(e, form, msgId) {
+  e.preventDefault();
+  const msg = document.getElementById(msgId);
+  const btn = form.querySelector('[type=submit]');
+  const originalLabel = btn.textContent;
+
+  const fd = new FormData(form);
+  const data = {};
+  fd.forEach((val, key) => {
+    if (key === 'interests') return;
+    data[key] = val;
+  });
+  const interests = fd.getAll('interests');
+  if (interests.length) data.interests = interests;
+  data.name = [data.first_name, data.last_name].filter(Boolean).join(' ');
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+  msg.className = 'form-msg';
+  msg.textContent = '';
+
+  try {
+    const res = await fetch('https://forms.daschofskyforsheriff.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    if (json.success) {
+      msg.className = 'form-msg form-msg-ok';
+      msg.textContent = data.form_type === 'volunteer'
+        ? 'Eres parte del equipo. Te contactaremos dentro de 48 horas.'
+        : 'Solicitud recibida. La campaña entregará tu letrero en una semana.';
+      form.reset();
+    } else {
+      throw new Error(json.error || 'Error desconocido');
+    }
+  } catch (err) {
+    msg.className = 'form-msg form-msg-err';
+    msg.textContent = 'Algo salió mal. Escríbenos directamente a Daschofskyforsheriff@gmail.com.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+  }
+}
 
 const donateModal = document.getElementById('donateModal');
 if (donateModal) {

@@ -1189,6 +1189,12 @@ body {
 .sb-surface { background: var(--bg-surface); }
 .sb-medium  { background: var(--bg-medium); }
 
+/* ===== FORM STATUS MESSAGES ===== */
+.form-msg { margin-top: 0.9rem; font-size: 0.875rem; padding: 0.75rem 1rem; display: none; border: 1px solid transparent; }
+.form-msg:not(:empty) { display: block; }
+.form-msg-ok { background: oklch(0.22 0.04 145 / 0.5); border-color: oklch(0.48 0.14 145); color: oklch(0.82 0.13 145); }
+.form-msg-err { background: oklch(0.22 0.04 25 / 0.5); border-color: oklch(0.52 0.16 25); color: oklch(0.85 0.13 25); }
+
 /* ===== FADE-IN ANIMATIONS ===== */
 .fade-up {
   opacity: 0;
@@ -1699,56 +1705,58 @@ body {
       <div class="yardsign-visual fade-up">
         <img src="assets/logo.png" alt="Daschofsky for Sheriff yard sign">
       </div>
-      <form class="volunteer-form fade-up" onsubmit="event.preventDefault(); alert('Thanks. The campaign will deliver your sign within one week.'); this.reset();">
+      <form class="volunteer-form fade-up" id="yardsignForm" onsubmit="handleFormSubmit(event, this, 'yardsignMsg')">
+        <input type="hidden" name="form_type" value="yardsign">
         <div class="form-row two">
           <div class="form-field">
             <label for="yfirst">First Name</label>
-            <input type="text" id="yfirst" required>
+            <input type="text" id="yfirst" name="first_name" required>
           </div>
           <div class="form-field">
             <label for="ylast">Last Name</label>
-            <input type="text" id="ylast" required>
+            <input type="text" id="ylast" name="last_name" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="yemail">Email</label>
-            <input type="email" id="yemail" required>
+            <input type="email" id="yemail" name="email" required>
           </div>
           <div class="form-field">
             <label for="yphone">Phone</label>
-            <input type="tel" id="yphone" required>
+            <input type="tel" id="yphone" name="phone" required>
           </div>
         </div>
         <div class="form-field">
           <label for="yaddress">Street Address (where to deliver)</label>
-          <input type="text" id="yaddress" required>
+          <input type="text" id="yaddress" name="address" required>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="ycity">City</label>
-            <input type="text" id="ycity" required>
+            <input type="text" id="ycity" name="city" required>
           </div>
           <div class="form-field">
             <label for="yzip">ZIP</label>
-            <input type="text" id="yzip" inputmode="numeric" required>
+            <input type="text" id="yzip" name="zip" inputmode="numeric" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="yqty">How many signs?</label>
-            <input type="number" id="yqty" min="1" max="10" value="1" required>
+            <input type="number" id="yqty" name="quantity" min="1" max="10" value="1" required>
           </div>
           <div class="form-field">
             <label for="ytype">Sign type</label>
-            <input type="text" id="ytype" placeholder="Standard / Large / Either" value="Either">
+            <input type="text" id="ytype" name="sign_type" placeholder="Standard / Large / Either" value="Either">
           </div>
         </div>
         <div class="form-field">
           <label for="ynotes">Delivery notes (optional)</label>
-          <textarea id="ynotes" rows="2" placeholder="Best time to drop off, where to leave it, etc."></textarea>
+          <textarea id="ynotes" name="notes" rows="2" placeholder="Best time to drop off, where to leave it, etc."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Request Sign</button>
+        <button type="submit" class="btn btn-primary" id="yardsignBtn" style="align-self: flex-start;">Request Sign</button>
+        <div class="form-msg" id="yardsignMsg"></div>
       </form>
     </div>
   </div>
@@ -1790,43 +1798,45 @@ body {
       <p class="section-lead">Knock doors. Make calls. Plant a sign in your yard. Host a meet-and-greet. Every hour you give brings us closer to election night.</p>
     </div>
     <div class="volunteer-grid">
-      <form class="volunteer-form fade-up" onsubmit="event.preventDefault(); alert('Thanks for stepping up. The team will reach out within 48 hours.'); this.reset();">
+      <form class="volunteer-form fade-up" id="volunteerForm" onsubmit="handleFormSubmit(event, this, 'volunteerMsg')">
+        <input type="hidden" name="form_type" value="volunteer">
         <div class="form-row two">
           <div class="form-field">
             <label for="vfirst">First Name</label>
-            <input type="text" id="vfirst" required>
+            <input type="text" id="vfirst" name="first_name" required>
           </div>
           <div class="form-field">
             <label for="vlast">Last Name</label>
-            <input type="text" id="vlast" required>
+            <input type="text" id="vlast" name="last_name" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="vemail">Email</label>
-            <input type="email" id="vemail" required>
+            <input type="email" id="vemail" name="email" required>
           </div>
           <div class="form-field">
             <label for="vphone">Phone</label>
-            <input type="tel" id="vphone">
+            <input type="tel" id="vphone" name="phone">
           </div>
         </div>
         <div class="form-field">
           <label>I want to help with</label>
           <div class="checkbox-grid">
-            <label><input type="checkbox" name="help" value="doors"> Door knocking</label>
-            <label><input type="checkbox" name="help" value="phones"> Phone banking</label>
-            <label><input type="checkbox" name="help" value="signs"> Yard sign</label>
-            <label><input type="checkbox" name="help" value="host"> Host event</label>
-            <label><input type="checkbox" name="help" value="data"> Data entry</label>
-            <label><input type="checkbox" name="help" value="anywhere"> Wherever needed</label>
+            <label><input type="checkbox" name="interests" value="Door knocking"> Door knocking</label>
+            <label><input type="checkbox" name="interests" value="Phone banking"> Phone banking</label>
+            <label><input type="checkbox" name="interests" value="Yard sign"> Yard sign</label>
+            <label><input type="checkbox" name="interests" value="Host event"> Host event</label>
+            <label><input type="checkbox" name="interests" value="Data entry"> Data entry</label>
+            <label><input type="checkbox" name="interests" value="Wherever needed"> Wherever needed</label>
           </div>
         </div>
         <div class="form-field">
           <label for="vmsg">Anything we should know?</label>
-          <textarea id="vmsg" rows="3"></textarea>
+          <textarea id="vmsg" name="message" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Sign Me Up</button>
+        <button type="submit" class="btn btn-primary" id="volunteerBtn" style="align-self: flex-start;">Sign Me Up</button>
+        <div class="form-msg" id="volunteerMsg"></div>
       </form>
       <div class="volunteer-info fade-up">
         <h3>Get in touch directly</h3>
@@ -1944,6 +1954,53 @@ body {
 
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Form submission
+async function handleFormSubmit(e, form, msgId) {
+  e.preventDefault();
+  const msg = document.getElementById(msgId);
+  const btn = form.querySelector('[type=submit]');
+  const originalLabel = btn.textContent;
+
+  const fd = new FormData(form);
+  const data = {};
+  fd.forEach((val, key) => {
+    if (key === 'interests') return; // handled below
+    data[key] = val;
+  });
+  const interests = fd.getAll('interests');
+  if (interests.length) data.interests = interests;
+  data.name = [data.first_name, data.last_name].filter(Boolean).join(' ');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  msg.className = 'form-msg';
+  msg.textContent = '';
+
+  try {
+    const res = await fetch('https://forms.daschofskyforsheriff.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    if (json.success) {
+      msg.className = 'form-msg form-msg-ok';
+      msg.textContent = data.form_type === 'volunteer'
+        ? 'You are on the team. We will reach out within 48 hours.'
+        : 'Request received. The campaign will deliver your sign within one week.';
+      form.reset();
+    } else {
+      throw new Error(json.error || 'Submission failed');
+    }
+  } catch (err) {
+    msg.className = 'form-msg form-msg-err';
+    msg.textContent = 'Something went wrong. Email us directly at Daschofskyforsheriff@gmail.com.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+  }
+}
 
 // Donate modal
 const donateModal = document.getElementById('donateModal');
