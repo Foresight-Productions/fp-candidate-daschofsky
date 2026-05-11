@@ -66,9 +66,9 @@ body {
 
 #nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  display: flex; align-items: stretch; justify-content: space-between;
-  padding: 0 5% 0 0;
-  height: 88px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  height: 72px;
   background: oklch(0.985 0.004 80 / 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -82,20 +82,29 @@ body {
 .nav-logo {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  padding: 0 2.2rem 0 5%;
-  background: var(--bg-deep);
-  position: relative;
-  transition: background 220ms ease;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1;
 }
-.nav-logo::after {
-  content: '';
-  position: absolute;
-  right: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: var(--gold);
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: oklch(0.18 0.008 80);
+  line-height: 1;
 }
-.nav-logo-img { height: 72px; width: auto; display: block; }
+.nav-brand-sub {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
 .nav-links {
   display: flex; align-items: center; gap: 2.2rem; flex-shrink: 0;
   list-style: none;
@@ -200,28 +209,15 @@ body {
   background: linear-gradient(to bottom, transparent 60%, oklch(0.13 0.008 80 / 0.55) 100%);
   pointer-events: none;
 }
-.hero-stamp {
+.hero-logo {
   position: absolute;
-  bottom: 1.5rem; right: 1.5rem;
-  z-index: 1;
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  line-height: 1;
-  color: var(--gold);
-  letter-spacing: 0.02em;
-  text-shadow: 0 2px 18px oklch(0 0 0 / 0.7);
+  bottom: 2rem; left: 2rem;
+  width: clamp(220px, 34vw, 420px);
+  max-width: calc(100% - 4rem);
+  height: auto;
+  z-index: 2;
+  filter: drop-shadow(0 14px 44px oklch(0 0 0 / 0.7));
   pointer-events: none;
-}
-.hero-stamp::after {
-  content: 'ELECCIÓN';
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.62rem;
-  letter-spacing: 0.4em;
-  color: var(--text-bright);
-  font-weight: 600;
-  margin-top: 0.4rem;
-  text-shadow: 0 1px 6px oklch(0 0 0 / 0.85);
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -838,10 +834,10 @@ body {
 }
 
 @media (max-width: 767px) {
-  #nav { padding: 0 1.2rem 0 0; height: 76px; }
-  .nav-logo { padding: 0 1rem 0 1.2rem; }
-  .nav-logo::after { width: 2px; }
-  .nav-logo-img { height: 56px; }
+  #nav { padding: 0 1.2rem; height: 64px; }
+  .nav-brand { font-size: 1.35rem; }
+  .nav-brand-sub { font-size: 0.55rem; margin-top: 0.3rem; }
+  .hero-logo { bottom: 1rem; left: 1rem; width: clamp(180px, 56vw, 320px); }
   .nav-links { display: none; }
   .nav-toggle { display: inline-flex; }
   .nav-mobile {
@@ -907,7 +903,8 @@ body {
 
 <header id="nav">
   <a href="#top" class="nav-logo">
-    <img src="../assets/logo.png" alt="Ashley Daschofsky para Sheriff" class="nav-logo-img">
+    <span class="nav-brand">Daschofsky</span>
+    <span class="nav-brand-sub">Para Sheriff · 2026</span>
   </a>
   <nav>
     <ul class="nav-links">
@@ -981,8 +978,8 @@ body {
       </div>
     </div>
   </div>
-  <div class="hero-photo" aria-hidden="true">
-    <div class="hero-stamp">2026</div>
+  <div class="hero-photo">
+    <img src="../assets/logo.png" alt="Ashley Daschofsky para Sheriff" class="hero-logo">
   </div>
 </section>
 
