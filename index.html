@@ -2031,6 +2031,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Form submission
 async function handleFormSubmit(e, form, msgId) {
   e.preventDefault();
+  if (form.dataset.submitting) return;
+  form.dataset.submitting = 'true';
   const msg = document.getElementById(msgId);
   const btn = form.querySelector('[type=submit]');
   const originalLabel = btn.textContent;
@@ -2070,6 +2072,7 @@ async function handleFormSubmit(e, form, msgId) {
     msg.className = 'form-msg form-msg-err';
     msg.textContent = 'Something went wrong. Email us directly at Daschofskyforsheriff@gmail.com.';
   } finally {
+    delete form.dataset.submitting;
     btn.disabled = false;
     btn.textContent = originalLabel;
   }
