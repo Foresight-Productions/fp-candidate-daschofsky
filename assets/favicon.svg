@@ -9,20 +9,66 @@
   <rect y="27.08" width="32" height="2.46" fill="#fff"/>
   <!-- Blue canton -->
   <rect width="14" height="14" fill="#3C3B6E"/>
-  <!-- 13 stars in a circle (Betsy Ross) — radius 4.5, center (7,7), 13 evenly spaced -->
+  <!-- 50 stars: 9 rows alternating 6 and 5 stars -->
   <g fill="#fff">
-    <circle cx="7.00" cy="2.50" r="0.9"/>
-    <circle cx="9.09" cy="3.01" r="0.9"/>
-    <circle cx="10.70" cy="4.44" r="0.9"/>
-    <circle cx="11.47" cy="6.46" r="0.9"/>
-    <circle cx="11.21" cy="8.60" r="0.9"/>
-    <circle cx="9.98"  cy="10.37" r="0.9"/>
-    <circle cx="8.08"  cy="11.37" r="0.9"/>
-    <circle cx="5.92"  cy="11.37" r="0.9"/>
-    <circle cx="4.02"  cy="10.37" r="0.9"/>
-    <circle cx="2.79"  cy="8.60" r="0.9"/>
-    <circle cx="2.53"  cy="6.46" r="0.9"/>
-    <circle cx="3.30"  cy="4.44" r="0.9"/>
-    <circle cx="4.91"  cy="3.01" r="0.9"/>
+    <!-- Row 1 (y=1.0): 6 stars -->
+    <circle cx="1.0"  cy="1.0" r="0.6"/>
+    <circle cx="3.4"  cy="1.0" r="0.6"/>
+    <circle cx="5.8"  cy="1.0" r="0.6"/>
+    <circle cx="8.2"  cy="1.0" r="0.6"/>
+    <circle cx="10.6" cy="1.0" r="0.6"/>
+    <circle cx="13.0" cy="1.0" r="0.6"/>
+    <!-- Row 2 (y=2.5): 5 stars -->
+    <circle cx="2.2"  cy="2.5" r="0.6"/>
+    <circle cx="4.6"  cy="2.5" r="0.6"/>
+    <circle cx="7.0"  cy="2.5" r="0.6"/>
+    <circle cx="9.4"  cy="2.5" r="0.6"/>
+    <circle cx="11.8" cy="2.5" r="0.6"/>
+    <!-- Row 3 (y=4.0): 6 stars -->
+    <circle cx="1.0"  cy="4.0" r="0.6"/>
+    <circle cx="3.4"  cy="4.0" r="0.6"/>
+    <circle cx="5.8"  cy="4.0" r="0.6"/>
+    <circle cx="8.2"  cy="4.0" r="0.6"/>
+    <circle cx="10.6" cy="4.0" r="0.6"/>
+    <circle cx="13.0" cy="4.0" r="0.6"/>
+    <!-- Row 4 (y=5.5): 5 stars -->
+    <circle cx="2.2"  cy="5.5" r="0.6"/>
+    <circle cx="4.6"  cy="5.5" r="0.6"/>
+    <circle cx="7.0"  cy="5.5" r="0.6"/>
+    <circle cx="9.4"  cy="5.5" r="0.6"/>
+    <circle cx="11.8" cy="5.5" r="0.6"/>
+    <!-- Row 5 (y=7.0): 6 stars -->
+    <circle cx="1.0"  cy="7.0" r="0.6"/>
+    <circle cx="3.4"  cy="7.0" r="0.6"/>
+    <circle cx="5.8"  cy="7.0" r="0.6"/>
+    <circle cx="8.2"  cy="7.0" r="0.6"/>
+    <circle cx="10.6" cy="7.0" r="0.6"/>
+    <circle cx="13.0" cy="7.0" r="0.6"/>
+    <!-- Row 6 (y=8.5): 5 stars -->
+    <circle cx="2.2"  cy="8.5" r="0.6"/>
+    <circle cx="4.6"  cy="8.5" r="0.6"/>
+    <circle cx="7.0"  cy="8.5" r="0.6"/>
+    <circle cx="9.4"  cy="8.5" r="0.6"/>
+    <circle cx="11.8" cy="8.5" r="0.6"/>
+    <!-- Row 7 (y=10.0): 6 stars -->
+    <circle cx="1.0"  cy="10.0" r="0.6"/>
+    <circle cx="3.4"  cy="10.0" r="0.6"/>
+    <circle cx="5.8"  cy="10.0" r="0.6"/>
+    <circle cx="8.2"  cy="10.0" r="0.6"/>
+    <circle cx="10.6" cy="10.0" r="0.6"/>
+    <circle cx="13.0" cy="10.0" r="0.6"/>
+    <!-- Row 8 (y=11.5): 5 stars -->
+    <circle cx="2.2"  cy="11.5" r="0.6"/>
+    <circle cx="4.6"  cy="11.5" r="0.6"/>
+    <circle cx="7.0"  cy="11.5" r="0.6"/>
+    <circle cx="9.4"  cy="11.5" r="0.6"/>
+    <circle cx="11.8" cy="11.5" r="0.6"/>
+    <!-- Row 9 (y=13.0): 6 stars -->
+    <circle cx="1.0"  cy="13.0" r="0.6"/>
+    <circle cx="3.4"  cy="13.0" r="0.6"/>
+    <circle cx="5.8"  cy="13.0" r="0.6"/>
+    <circle cx="8.2"  cy="13.0" r="0.6"/>
+    <circle cx="10.6" cy="13.0" r="0.6"/>
+    <circle cx="13.0" cy="13.0" r="0.6"/>
   </g>
 </svg>
