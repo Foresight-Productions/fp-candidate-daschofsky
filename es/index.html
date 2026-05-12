@@ -1310,55 +1310,55 @@ body {
       <div class="yardsign-visual fade-up">
         <img src="../assets/logo.png" alt="Letrero de Daschofsky para Sheriff">
       </div>
-      <form class="volunteer-form fade-up" id="yardsignForm" onsubmit="handleFormSubmit(event, this, 'yardsignMsg')">
+      <form class="volunteer-form fade-up" id="yardsignForm" autocomplete="on">
         <input type="hidden" name="form_type" value="yardsign">
         <div class="form-row two">
           <div class="form-field">
             <label for="yfirst">Nombre</label>
-            <input type="text" id="yfirst" name="first_name" required>
+            <input type="text" id="yfirst" name="ys_first_name" autocomplete="given-name" required>
           </div>
           <div class="form-field">
             <label for="ylast">Apellido</label>
-            <input type="text" id="ylast" name="last_name" required>
+            <input type="text" id="ylast" name="ys_last_name" autocomplete="family-name" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="yemail">Correo</label>
-            <input type="email" id="yemail" name="email" required>
+            <input type="email" id="yemail" name="ys_email" autocomplete="email" required>
           </div>
           <div class="form-field">
             <label for="yphone">Teléfono</label>
-            <input type="tel" id="yphone" name="phone" required>
+            <input type="tel" id="yphone" name="ys_phone" autocomplete="tel" required>
           </div>
         </div>
         <div class="form-field">
           <label for="yaddress">Dirección (para entrega)</label>
-          <input type="text" id="yaddress" name="address" required>
+          <input type="text" id="yaddress" name="ys_address" autocomplete="street-address" required>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="ycity">Ciudad</label>
-            <input type="text" id="ycity" name="city" required>
+            <input type="text" id="ycity" name="ys_city" autocomplete="address-level2" required>
           </div>
           <div class="form-field">
             <label for="yzip">Código Postal</label>
-            <input type="text" id="yzip" name="zip" inputmode="numeric" required>
+            <input type="text" id="yzip" name="ys_zip" inputmode="numeric" autocomplete="postal-code" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="yqty">¿Cuántos letreros?</label>
-            <input type="number" id="yqty" name="quantity" min="1" max="10" value="1" required>
+            <input type="number" id="yqty" name="ys_quantity" min="1" max="10" value="1" required>
           </div>
           <div class="form-field">
             <label for="ytype">Tipo de letrero</label>
-            <input type="text" id="ytype" name="sign_type" placeholder="Estándar / Grande / Cualquiera" value="Cualquiera">
+            <input type="text" id="ytype" name="ys_sign_type" placeholder="Estándar / Grande / Cualquiera" value="Cualquiera">
           </div>
         </div>
         <div class="form-field">
           <label for="ynotes">Notas de entrega (opcional)</label>
-          <textarea id="ynotes" name="notes" rows="2" placeholder="Mejor hora para dejarlo, dónde dejarlo, etc."></textarea>
+          <textarea id="ynotes" name="ys_notes" rows="2" placeholder="Mejor hora para dejarlo, dónde dejarlo, etc."></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Solicitar Letrero</button>
         <div class="form-msg" id="yardsignMsg"></div>
@@ -1401,26 +1401,26 @@ body {
       <p class="section-lead">Toca puertas. Haz llamadas. Pon un letrero en tu jardín. Hospeda un encuentro. Cada hora que des nos acerca más a la noche de elección.</p>
     </div>
     <div class="volunteer-grid">
-      <form class="volunteer-form fade-up" id="volunteerForm" onsubmit="handleFormSubmit(event, this, 'volunteerMsg')">
+      <form class="volunteer-form fade-up" id="volunteerForm" autocomplete="on">
         <input type="hidden" name="form_type" value="volunteer">
         <div class="form-row two">
           <div class="form-field">
             <label for="vfirst">Nombre</label>
-            <input type="text" id="vfirst" name="first_name" required>
+            <input type="text" id="vfirst" name="vl_first_name" autocomplete="given-name" required>
           </div>
           <div class="form-field">
             <label for="vlast">Apellido</label>
-            <input type="text" id="vlast" name="last_name" required>
+            <input type="text" id="vlast" name="vl_last_name" autocomplete="family-name" required>
           </div>
         </div>
         <div class="form-row two">
           <div class="form-field">
             <label for="vemail">Correo</label>
-            <input type="email" id="vemail" name="email" required>
+            <input type="email" id="vemail" name="vl_email" autocomplete="email" required>
           </div>
           <div class="form-field">
             <label for="vphone">Teléfono</label>
-            <input type="tel" id="vphone" name="phone">
+            <input type="tel" id="vphone" name="vl_phone" autocomplete="tel">
           </div>
         </div>
         <div class="form-field">
@@ -1569,7 +1569,9 @@ async function handleFormSubmit(e, form, msgId) {
   const data = {};
   fd.forEach((val, key) => {
     if (key === 'interests') return;
-    data[key] = val;
+    // Strip ys_ / vl_ prefixes so the worker always sees plain field names
+    const normalKey = key.replace(/^(ys|vl)_/, '');
+    data[normalKey] = val;
   });
   const interests = fd.getAll('interests');
   if (interests.length) data.interests = interests;
@@ -1605,6 +1607,14 @@ async function handleFormSubmit(e, form, msgId) {
     btn.textContent = originalLabel;
   }
 }
+
+// Form event listeners (explicit — avoids iOS Safari multi-form submit bug)
+(function() {
+  var vf = document.getElementById('volunteerForm');
+  var yf = document.getElementById('yardsignForm');
+  if (vf) vf.addEventListener('submit', function(e) { handleFormSubmit(e, vf, 'volunteerMsg'); });
+  if (yf) yf.addEventListener('submit', function(e) { handleFormSubmit(e, yf, 'yardsignMsg'); });
+})();
 
 const donateModal = document.getElementById('donateModal');
 if (donateModal) {
