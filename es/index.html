@@ -758,6 +758,47 @@ body {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+.yard-sign-request {
+  border: 1px solid var(--gold-deep);
+  border-radius: 4px;
+  padding: 0.9rem 1.1rem;
+  background: oklch(0.78 0.13 85 / 0.06);
+}
+.yard-sign-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-bright);
+  font-weight: 500;
+}
+.yard-sign-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--gold-deep);
+  border-radius: 3px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms;
+}
+.yard-sign-label input[type="checkbox"]:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.yard-sign-label input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 6px; height: 11px;
+  border: solid var(--bg-deep);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
 .volunteer-info h3 {
   font-family: var(--font-display);
   font-size: 1.6rem;
@@ -1353,7 +1394,7 @@ body {
           <div class="checkbox-grid">
             <label><input type="checkbox" name="interests" value="Tocar puertas"> Tocar puertas</label>
             <label><input type="checkbox" name="interests" value="Llamadas telefónicas"> Llamadas telefónicas</label>
-            <label><input type="checkbox" name="interests" value="Solicitar letrero de jardín"> Solicitar letrero de jardín</label>
+            <label><input type="checkbox" name="interests" value="Letreros de jardín"> Letreros de jardín</label>
             <label><input type="checkbox" name="interests" value="Hospedar evento"> Hospedar evento</label>
             <label><input type="checkbox" name="interests" value="Redes sociales"> Redes sociales</label>
             <label><input type="checkbox" name="interests" value="Otro"> Otro</label>
@@ -1362,6 +1403,12 @@ body {
         <div class="form-field">
           <label for="vmsg">Mensaje (opcional)</label>
           <textarea id="vmsg" name="message" rows="3" placeholder="Saluda, haz una pregunta, o comparte lo que te importa..."></textarea>
+        </div>
+        <div class="form-field yard-sign-request">
+          <label class="yard-sign-label">
+            <input type="checkbox" name="interests" value="Solicitar letrero de jardín">
+            <span>Quiero un letrero entregado en mi dirección</span>
+          </label>
         </div>
         <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Anótame</button>
         <div class="form-msg" id="volunteerMsg"></div>
