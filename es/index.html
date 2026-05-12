@@ -62,6 +62,7 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 ::selection { background: var(--gold); color: var(--bg-deep); }
@@ -847,6 +848,11 @@ body {
 .sb-surface { background: var(--bg-surface); }
 .sb-medium  { background: var(--bg-medium); }
 
+@media (max-width: 767px) {
+  #nav { backdrop-filter: none; -webkit-backdrop-filter: none; background: oklch(0.985 0.004 80 / 0.98); }
+  .fade-up { will-change: opacity, transform; }
+  .fade-up.in { will-change: auto; }
+}
 .form-msg { margin-top: 0.9rem; font-size: 0.875rem; padding: 0.75rem 1rem; display: none; border: 1px solid transparent; }
 .form-msg:not(:empty) { display: block; }
 .form-msg-ok { background: oklch(0.22 0.04 145 / 0.5); border-color: oklch(0.48 0.14 145); color: oklch(0.82 0.13 145); }
