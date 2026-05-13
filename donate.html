@@ -98,12 +98,13 @@ body {
 /* ===== LEFT COLUMN ===== */
 .donate-left {
   grid-area: left;
-  padding: 4rem 5% 4rem 6%;
+  padding: 5rem 5% 5rem 6%;
   background: var(--bg-deep);
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .stars {
@@ -176,66 +177,17 @@ body {
 /* ===== RIGHT COLUMN ===== */
 .donate-right {
   grid-area: right;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-surface);
-}
-
-.candidate-graphic {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-deep);
-  border-bottom: 1px solid var(--line);
-  flex-shrink: 0;
-}
-.candidate-graphic img {
-  width: 100%;
-  display: block;
-  max-height: 300px;
-  object-fit: cover;
-  object-position: center 18%;
-}
-.graphic-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, var(--bg-deep) 0%, transparent 40%);
-  pointer-events: none;
-}
-.graphic-badge {
-  position: absolute;
-  bottom: 1.4rem; left: 1.6rem;
-  background: var(--bg-deep);
-  border: 1px solid var(--gold-deep);
-  padding: 0.7rem 1.1rem;
-}
-.graphic-badge-name {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-bright);
-  line-height: 1;
-}
-.graphic-badge-sub {
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
-  margin-top: 0.3rem;
-}
-
-.embed-wrap {
-  flex: 1;
-  min-height: 680px;
   background: oklch(0.97 0.003 80);
+  min-height: 1200px;
+  position: relative;
 }
-.embed-wrap iframe {
+.donate-right iframe {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 680px;
+  min-height: 1200px;
   border: none;
+  background: oklch(0.97 0.003 80);
 }
 
 /* ===== FOOTER ===== */
@@ -369,29 +321,14 @@ body {
 
   </div>
 
-  <!-- RIGHT: Candidate graphic + Anedot embed -->
+  <!-- RIGHT: Anedot embed (includes built-in campaign branding) -->
   <div class="donate-right">
-
-    <div class="candidate-graphic">
-      <img src="assets/hero-truck-k9.jpg" alt="Ashley Daschofsky for Walla Walla County Sheriff">
-      <div class="graphic-overlay"></div>
-      <div class="graphic-badge">
-        <div class="graphic-badge-name">Ashley Daschofsky</div>
-        <div class="graphic-badge-sub">Walla Walla County Sheriff &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Republican</div>
-      </div>
-    </div>
-
-    <div class="embed-wrap">
-      <iframe
-        src="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b?embed=true"
-        width="100%"
-        height="680"
-        frameborder="0"
-        scrolling="auto"
-        title="Donate to Daschofsky for Sheriff">
-      </iframe>
-    </div>
-
+    <iframe
+      src="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b?embed=true"
+      frameborder="0"
+      scrolling="auto"
+      title="Donate to Daschofsky for Sheriff">
+    </iframe>
   </div>
 
   <!-- FOOTER -->
