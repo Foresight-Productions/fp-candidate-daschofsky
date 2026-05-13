@@ -177,17 +177,21 @@ body {
 /* ===== RIGHT COLUMN ===== */
 .donate-right {
   grid-area: right;
-  background: oklch(0.97 0.003 80);
+  background: var(--bg-deep);
   min-height: 1200px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem;
 }
 .donate-right iframe {
   display: block;
   width: 100%;
+  max-width: 540px;
   height: 100%;
-  min-height: 1200px;
+  min-height: 1150px;
   border: none;
-  background: oklch(0.97 0.003 80);
+  background: transparent;
 }
 
 /* ===== FOOTER ===== */
@@ -222,7 +226,7 @@ body {
   .nav-toggle { display:flex; }
   .donate-page { grid-template-columns:1fr; grid-template-areas:"left""right""footer"; }
   .donate-left { border-right:none; border-bottom:1px solid var(--line); padding: 3rem 5%; }
-  .candidate-graphic img { max-height: 240px; }
+  .donate-right { padding: 2rem 1rem; min-height: auto; }
   .footer-inner { grid-template-columns:1fr; gap:1.6rem; }
 }
 @media (max-width: 500px) {
