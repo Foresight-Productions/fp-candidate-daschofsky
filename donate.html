@@ -70,18 +70,20 @@
     }
     .nav-brand-name {
       font-family: var(--display);
-      font-size: 1.35rem;
+      font-size: 1.7rem;
       letter-spacing: 0.04em;
-      color: #14130F;
+      color: oklch(0.18 0.008 80);
       line-height: 1;
       text-transform: uppercase;
     }
     .nav-brand-sub {
+      font-family: var(--body);
       font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      color: oklch(0.42 0.008 80);
+      letter-spacing: 0.36em;
+      color: var(--gold-deep);
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
+      margin-top: 0.25rem;
     }
     .nav-links { display: flex; align-items: center; gap: 2.4rem; flex-shrink: 0; }
     .nav-links a {
@@ -273,11 +275,12 @@
 
     /* MOBILE */
     @media (max-width: 768px) {
-      :root { --nav-h: 90px; }
+      :root { --nav-h: 72px; }
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
       #nav { justify-content: space-between; }
-      .nav-brand img { height: 60px; max-width: 240px; object-fit: contain; }
+      .nav-brand-name { font-size: 1.35rem; }
+      .nav-brand-sub { font-size: 0.55rem; letter-spacing: 0.3em; }
 
       .donate-wrap {
         padding-top: calc(var(--nav-h) + 2rem);
