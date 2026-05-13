@@ -244,6 +244,42 @@
       padding: 1rem 0;
     }
 
+    /* Donation rules */
+    .dl-rules {
+      border-top: 1px solid var(--border);
+      padding-top: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .dl-rules-title {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .dl-rules ul {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.9rem;
+    }
+    .dl-rules li {
+      position: relative;
+      padding-left: 1.4rem;
+      font-family: var(--body);
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: rgba(246,244,237,0.78);
+      line-height: 1.55;
+    }
+    .dl-rules li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.55rem;
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
     .dl-compliance {
       font-family: var(--body); font-size: 0.68rem;
       color: rgba(255,255,255,0.22); line-height: 1.7;
@@ -373,12 +409,22 @@
         </li>
       </ul>
 
+      <div class="dl-rules">
+        <h2 class="dl-rules-title">Rules</h2>
+        <ul>
+          <li>Donations are limited to $1,200 per person, $2,400 per household.</li>
+          <li>Limited to one donation per election. (Example: you can donate once in the primary &amp; once in the general election.)</li>
+          <li>You must provide your name, address, and phone number.</li>
+          <li>If donating more than $100 you must provide your profession and employer name.</li>
+        </ul>
+      </div>
+
       <img src="assets/logo.png" alt="Daschofsky for Sheriff" class="dl-campaign-img">
 
       <div class="dl-compliance">
         Paid for by Daschofsky for Sheriff &nbsp;·&nbsp;
         500 S College Ave #21, College Place, WA 99324<br>
-        Maximum individual contribution: $2,400 per election. Contributions are not tax deductible. &nbsp;·&nbsp;
+        Contributions are not tax deductible. &nbsp;·&nbsp;
         <a href="https://www.pdc.wa.gov" target="_blank" rel="noopener noreferrer">WA PDC Disclosure</a>
       </div>
 
