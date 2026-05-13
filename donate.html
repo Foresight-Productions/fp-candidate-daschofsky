@@ -41,7 +41,7 @@
       --border: rgba(246,244,237,0.08);
       --display: 'Anton', 'Impact', sans-serif;
       --body: 'Inter', sans-serif;
-      --nav-h: 88px;
+      --nav-h: 72px;
     }
 
     body {
@@ -51,31 +51,50 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* NAV */
+    /* NAV — matches main site */
     #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 5%; height: var(--nav-h);
-      background: #ffffff;
-      border-bottom: 2px solid var(--gold);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-      transition: box-shadow 0.3s;
+      background: oklch(0.985 0.004 80 / 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid oklch(0.88 0.005 80);
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
-    #nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.18); }
+    #nav.scrolled { border-color: oklch(0.82 0.006 80); box-shadow: 0 2px 20px rgba(0,0,0,0.12); }
     .nav-brand { flex-shrink: 0; display: flex; align-items: center; }
-    .nav-brand img { height: 68px; width: auto; display: block; }
+    .nav-brand a {
+      display: flex; flex-direction: column; gap: 1px;
+      text-decoration: none;
+    }
+    .nav-brand-name {
+      font-family: var(--display);
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: #14130F;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .nav-brand-sub {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: oklch(0.42 0.008 80);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
     .nav-links { display: flex; align-items: center; gap: 2.4rem; flex-shrink: 0; }
     .nav-links a {
-      font-family: var(--body); font-size: 0.78rem; font-weight: 400;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: #1a2744; text-decoration: none; transition: color 0.2s; position: relative;
+      font-family: var(--body); font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: oklch(0.38 0.008 80); text-decoration: none; transition: color 0.2s; position: relative;
     }
     .nav-links a::after {
       content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
       height: 1px; background: var(--gold); transform: scaleX(0);
       transform-origin: left; transition: transform 0.25s;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: #14130F; }
     .nav-links a:hover::after { transform: scaleX(1); }
     .btn-nav-donate {
       font-family: var(--body); font-size: 0.76rem; font-weight: 700;
@@ -91,7 +110,7 @@
       display: none; background: none; border: none; cursor: pointer;
       flex-direction: column; gap: 5px; padding: 4px; flex-shrink: 0;
     }
-    .nav-toggle span { display: block; width: 24px; height: 2px; background: #1a2744; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: #14130F; transition: transform 0.3s, opacity 0.3s; }
     .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
@@ -168,10 +187,9 @@
       line-height: 0.95;
       letter-spacing: 0.02em;
       margin-bottom: 1.4rem;
-      white-space: nowrap;
     }
     @media (max-width: 720px) {
-      .dl-headline { white-space: normal; font-size: clamp(2.6rem, 9vw, 3.6rem); }
+      .dl-headline { font-size: clamp(2.6rem, 9vw, 3.6rem); }
     }
     .dl-headline span {
       -webkit-text-stroke: 1.5px var(--gold);
@@ -282,7 +300,10 @@
 
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-brand">
-    <a href="/"><img src="assets/logo.png" alt="Ashley Daschofsky for Walla Walla County Sheriff"></a>
+    <a href="/">
+      <span class="nav-brand-name">Daschofsky</span>
+      <span class="nav-brand-sub">For Sheriff · 2026</span>
+    </a>
   </div>
   <div class="nav-links">
     <a href="/#bio">About</a>
@@ -323,7 +344,7 @@
       <div class="dl-tag">Support the Campaign</div>
 
       <h1 class="dl-headline">
-        Elect Ashley <span>Daschofsky</span>
+        Elect Ashley<br><span>Daschofsky</span>
       </h1>
 
       <div class="dl-divider"></div>
