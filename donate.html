@@ -1,383 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donate — Ashley Daschofsky for Walla Walla County Sheriff 2026</title>
-<meta name="description" content="Support Ashley Daschofsky's campaign for Walla Walla County Sheriff. Decorated deputy. Conservative leader. Help restore public safety in 2026.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Ashley Daschofsky for Walla Walla County Sheriff 2026</title>
+  <link rel="canonical" href="https://daschofskyforsheriff.com/donate">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="description" content="Support Ashley Daschofsky for Walla Walla County Sheriff in 2026. Your contribution funds yard signs, voter outreach, and field operations across Walla Walla County.">
+  <meta name="robots" content="index, follow">
 
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="canonical" href="https://daschofskyforsheriff.com/donate">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://daschofskyforsheriff.com/donate">
+  <meta property="og:title" content="Donate to Daschofsky for Sheriff | Walla Walla County 2026">
+  <meta property="og:description" content="Support Ashley Daschofsky for Walla Walla County Sheriff. Decorated deputy. Conservative leader. Help restore public safety in 2026.">
+  <meta property="og:image" content="https://daschofskyforsheriff.com/assets/og-image.png">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="788">
+  <meta property="og:site_name" content="Daschofsky for Sheriff">
+  <meta property="og:locale" content="en_US">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://daschofskyforsheriff.com/donate">
-<meta property="og:title" content="Donate — Daschofsky for Sheriff 2026">
-<meta property="og:description" content="Support Ashley Daschofsky's campaign for Walla Walla County Sheriff. Every dollar goes directly toward reaching our neighbors.">
-<meta property="og:image" content="https://daschofskyforsheriff.com/assets/og-image.png">
-<meta property="og:site_name" content="Daschofsky for Sheriff">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Donate to Daschofsky for Sheriff | Walla Walla County 2026">
+  <meta name="twitter:description" content="Support Ashley Daschofsky for Walla Walla County Sheriff. Help fund voter outreach and field operations.">
+  <meta name="twitter:image" content="https://daschofskyforsheriff.com/assets/og-image.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #070F1E;
+      --surface: #0D1829;
+      --red: #C8102E;
+      --white: #FFFFFF;
+      --muted: rgba(255,255,255,0.55);
+      --border: rgba(255,255,255,0.08);
+      --heading: 'Oswald', sans-serif;
+      --body: 'Inter', sans-serif;
+      --nav-h: 88px;
+    }
 
-<style>
-:root {
-  --bg-deep:    oklch(0.13 0.008 80);
-  --bg-surface: oklch(0.18 0.008 80);
-  --bg-elevated:oklch(0.22 0.008 80);
-  --bg-stripe:  oklch(0.10 0.006 80);
-  --text-bright:oklch(0.96 0.005 80);
-  --text-muted: oklch(0.72 0.008 80);
-  --text-dim:   oklch(0.55 0.008 80);
-  --gold:       oklch(0.78 0.13 85);
-  --gold-deep:  oklch(0.62 0.14 75);
-  --line:       oklch(0.30 0.008 80);
-  --font-display:'Anton','Impact',sans-serif;
-  --font-body:  'Inter',system-ui,sans-serif;
-}
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
 
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  font-family: var(--font-body);
-  background: var(--bg-deep);
-  color: var(--text-bright);
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-::selection { background: var(--gold); color: var(--bg-deep); }
+    /* NAV */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: var(--nav-h);
+      background: #ffffff;
+      border-bottom: 2px solid var(--red);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+    }
+    #nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.18); }
+    .nav-brand { flex-shrink: 0; display: flex; align-items: center; }
+    .nav-brand img { height: 68px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 2.4rem; flex-shrink: 0; }
+    .nav-links a {
+      font-family: var(--heading); font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: #1a2744; text-decoration: none; transition: color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--red); transform: scaleX(0);
+      transform-origin: left; transition: transform 0.25s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .btn-nav-donate {
+      font-family: var(--heading); font-size: 0.76rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      background: var(--red); color: var(--white) !important;
+      padding: 0.5rem 1.4rem; cursor: pointer; text-decoration: none;
+      transition: background 0.2s; min-height: 36px;
+      display: inline-flex; align-items: center;
+    }
+    .btn-nav-donate:hover { background: #A50D26; }
+    .btn-nav-donate::after { display: none !important; }
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      flex-direction: column; gap: 5px; padding: 4px; flex-shrink: 0;
+    }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: #1a2744; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .nav-overlay {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: #040A14; flex-direction: column; align-items: center;
+      justify-content: center; gap: 2.5rem; padding-top: 71px;
+    }
+    .nav-overlay.open { display: flex; }
+    .nav-overlay a {
+      font-family: var(--heading); font-size: 2.4rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--white); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-overlay a:hover { color: var(--red); }
+    .nav-overlay .btn-nav-donate { font-size: 1rem; padding: 0.9rem 2.8rem; }
 
-/* ===== NAV ===== */
-#nav {
-  position: fixed; top:0; left:0; right:0; z-index:1000;
-  display:flex; align-items:center; justify-content:space-between;
-  padding: 0 5%; height: 72px;
-  background: oklch(0.985 0.004 80 / 0.96);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid oklch(0.88 0.005 80);
-  transition: border-color 220ms ease, box-shadow 220ms ease;
-}
-#nav.scrolled { border-color: oklch(0.82 0.006 80); box-shadow: 0 2px 20px oklch(0 0 0 / 0.12); }
-.nav-logo { display:flex; flex-direction:column; gap:1px; text-decoration:none; }
-.nav-brand { font-family:var(--font-display); font-size:1.35rem; letter-spacing:0.04em; color:var(--bg-deep); line-height:1; text-transform:uppercase; }
-.nav-brand-sub { font-size:0.62rem; letter-spacing:0.12em; color:oklch(0.42 0.008 80); text-transform:uppercase; font-weight:600; }
-.nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
-.nav-links a { font-size:0.82rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; color:oklch(0.38 0.008 80); transition:color 180ms; }
-.nav-links a:hover { color:var(--bg-deep); }
-.nav-cta { background:var(--bg-deep); color:var(--text-bright) !important; padding:0.45rem 1.1rem; border-radius:2px; transition:background 180ms !important; }
-.nav-cta:hover { background:oklch(0.28 0.010 80) !important; }
-.nav-cta.active-page { background:var(--gold) !important; color:var(--bg-deep) !important; }
-.lang-toggle { display:flex; gap:0.4rem; align-items:center; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; }
-.lang-toggle a { color:oklch(0.55 0.008 80); text-decoration:none; transition:color 180ms; }
-.lang-toggle a:hover, .lang-toggle a.active { color:var(--bg-deep); }
-.nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.4rem; color:oklch(0.25 0.008 80); width:40px; height:40px; }
-.nav-toggle svg { width:22px; height:22px; display:block; }
-.nav-mobile { display:none; position:fixed; inset:0; z-index:999; background:oklch(0.985 0.004 80 / 0.98); flex-direction:column; align-items:center; justify-content:center; padding:5rem 2rem 2rem; }
-.nav-mobile.open { display:flex; }
-.nav-mobile ul { list-style:none; text-align:center; width:100%; }
-.nav-mobile ul li { border-bottom:1px solid oklch(0.88 0.005 80); }
-.nav-mobile ul li:first-child { border-top:1px solid oklch(0.88 0.005 80); }
-.nav-mobile ul a { display:block; padding:1rem 0; font-size:1rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; color:oklch(0.30 0.008 80); }
+    /* PAGE WRAPPER */
+    .donate-wrap {
+      padding-top: calc(var(--nav-h) + 3rem);
+      padding-bottom: 5rem;
+      padding-left: 5%;
+      padding-right: 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    .donate-wrap::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
 
-/* ===== MAIN LAYOUT ===== */
-.donate-page {
-  padding-top: 72px;
-  min-height: calc(100vh - 72px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr auto;
-  grid-template-areas:
-    "left right"
-    "footer footer";
-  align-items: stretch;
-}
+    /* GRID */
+    .donate-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
 
-/* ===== LEFT COLUMN ===== */
-.donate-left {
-  grid-area: left;
-  padding: 5rem 5% 5rem 6%;
-  background: var(--bg-deep);
-  border-right: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
-}
+    /* LEFT — STICKY PITCH */
+    .donate-pitch {
+      position: sticky;
+      top: calc(var(--nav-h) + 1.5rem);
+    }
 
-.stars {
-  display: flex; gap: 0.4rem;
-}
-.stars span {
-  color: var(--gold);
-  font-size: 1.1rem;
-}
+    .dl-stars {
+      display: flex; gap: 0.4rem; margin-bottom: 1.4rem;
+    }
+    .dl-star { color: var(--red); font-size: 1rem; }
 
-.eyebrow {
-  font-size: 0.72rem; font-weight:700; letter-spacing:0.16em;
-  text-transform:uppercase; color:var(--gold);
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.eyebrow::before {
-  content: ''; display: block;
-  width: 28px; height: 2px;
-  background: var(--gold);
-  flex-shrink: 0;
-}
+    .dl-tag {
+      font-family: var(--heading); font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--red);
+      display: inline-flex; align-items: center; gap: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+    .dl-tag::before {
+      content: ''; width: 28px; height: 1px; background: var(--red);
+    }
 
-.donate-headline {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 4.5vw, 4rem);
-  line-height: 1.0;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--text-bright);
-}
-.donate-headline span { color: var(--gold); }
+    .dl-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 4.2vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.4rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 720px) {
+      .dl-headline { white-space: normal; font-size: clamp(2.6rem, 9vw, 3.6rem); }
+    }
+    .dl-headline span {
+      -webkit-text-stroke: 2px var(--red);
+      color: transparent;
+    }
 
-.donate-desc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  max-width: 48ch;
-  line-height: 1.7;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--line);
-}
+    .dl-divider {
+      width: 48px; height: 3px;
+      background: var(--red);
+      margin-bottom: 1.6rem;
+    }
 
-/* Tier list */
-.tier-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.tier-row {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  align-items: baseline;
-  gap: 1.2rem;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--line);
-}
-.tier-row:first-child { border-top: 1px solid var(--line); }
-.tier-amount {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  letter-spacing: 0.02em;
-  color: var(--gold);
-  line-height: 1;
-}
-.tier-desc {
-  font-size: 0.84rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
+    .dl-sub {
+      font-family: var(--heading); font-size: 1rem; font-weight: 300;
+      color: var(--muted); line-height: 1.7;
+      margin-bottom: 2rem;
+    }
 
-/* ===== RIGHT COLUMN ===== */
-.donate-right {
-  grid-area: right;
-  background: var(--bg-deep);
-  min-height: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 3rem 2rem;
-}
-.donate-right iframe {
-  display: block;
-  width: 100%;
-  max-width: 540px;
-  height: 100%;
-  min-height: 1150px;
-  border: none;
-  background: transparent;
-}
+    /* Dollar impact rows */
+    .dl-impact {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 1.6rem;
+      margin-bottom: 2rem;
+      display: flex; flex-direction: column; gap: 1.1rem;
+    }
+    .dl-impact li {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .dl-amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--red);
+      letter-spacing: 0.03em;
+    }
+    .dl-what {
+      font-family: var(--heading); font-size: 0.9rem; font-weight: 300;
+      color: rgba(255,255,255,0.8); line-height: 1.5;
+    }
 
-/* ===== FOOTER ===== */
-.footer {
-  grid-area: footer;
-  background: var(--bg-stripe);
-  border-top: 1px solid var(--line);
-  padding: 3rem 6% 2rem;
-}
-.footer-inner {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
-}
-.footer-brand img { height: clamp(120px, 14vw, 180px); width:auto; max-width:100%; margin-bottom:1.4rem; display:block; }
-.footer-brand p { font-size:0.82rem; color:var(--text-dim); line-height:1.65; max-width:38ch; }
-.footer-links { list-style:none; display:flex; flex-wrap:wrap; gap:0.8rem 1.8rem; padding-top:0.4rem; }
-.footer-links a { font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; color:var(--text-dim); transition:color 180ms; }
-.footer-links a:hover { color:var(--gold); }
-.footer-compliance { margin-top:1.6rem; font-size:0.72rem; color:var(--text-dim); line-height:1.7; letter-spacing:0.02em; }
-.footer-compliance strong { color:var(--text-muted); font-weight:600; }
-.footer-compliance a { color:var(--text-muted); }
-.footer-compliance a:hover { color:var(--gold); }
+    .dl-campaign-img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid rgba(200,16,46,0.3);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
+    }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 860px) {
-  .nav-links { display:none; }
-  .nav-toggle { display:flex; }
-  .donate-page { grid-template-columns:1fr; grid-template-areas:"left""right""footer"; }
-  .donate-left { border-right:none; border-bottom:1px solid var(--line); padding: 3rem 5%; }
-  .donate-right { padding: 2rem 1rem; min-height: auto; }
-  .footer-inner { grid-template-columns:1fr; gap:1.6rem; }
-}
-@media (max-width: 500px) {
-  .donate-left { padding: 2.4rem 5%; }
-  .donate-headline { font-size: 2.4rem; }
-}
-</style>
+    .dl-compliance {
+      font-family: var(--body); font-size: 0.68rem;
+      color: rgba(255,255,255,0.22); line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .dl-compliance a { color: rgba(255,255,255,0.35); text-decoration: underline; }
+
+    /* RIGHT — FORM CARD */
+    .donate-form-col {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .donate-form-col::before {
+      content: '';
+      position: absolute; left: 0; right: 0; top: 0;
+      height: 3px; background: var(--red); z-index: 2;
+    }
+    .donate-frame {
+      width: 100%;
+      border: 0;
+      display: block;
+      background: #fff;
+      height: 1900px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      :root { --nav-h: 90px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      #nav { justify-content: space-between; }
+      .nav-brand img { height: 60px; max-width: 240px; object-fit: contain; }
+
+      .donate-wrap {
+        padding-top: calc(var(--nav-h) + 2rem);
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .donate-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .donate-pitch {
+        position: static;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<header id="nav">
-  <a href="/" class="nav-logo">
-    <span class="nav-brand">Daschofsky</span>
-    <span class="nav-brand-sub">For Sheriff · 2026</span>
-  </a>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="/#bio">About</a></li>
-      <li><a href="/#issues">Issues</a></li>
-      <li><a href="/#record">Record</a></li>
-      <li><a href="/#credentials">Credentials</a></li>
-      <li><a href="/#volunteer">Get Involved</a></li>
-      <li>
-        <span class="lang-toggle">
-          <a href="#" class="active" aria-current="page">EN</a>
-          <a href="/es/">ES</a>
-        </span>
-      </li>
-      <li><a href="/donate" class="nav-cta active-page">Donate</a></li>
-    </ul>
-  </nav>
-  <button class="nav-toggle" aria-label="Open menu" id="navToggle">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square">
-      <line x1="3" y1="7" x2="21" y2="7"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="17" x2="21" y2="17"/>
-    </svg>
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-brand">
+    <a href="/"><img src="assets/logo.png" alt="Ashley Daschofsky for Walla Walla County Sheriff"></a>
+  </div>
+  <div class="nav-links">
+    <a href="/#bio">About</a>
+    <a href="/#issues">Issues</a>
+    <a href="/#record">Record</a>
+    <a href="/#credentials">Credentials</a>
+    <a href="/#volunteer">Get Involved</a>
+    <a href="/donate" class="btn-nav-donate">Donate</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
   </button>
-</header>
-<div class="nav-mobile" id="navMobile">
-  <span class="lang-toggle" style="margin-bottom:2rem; align-self:flex-start;">
-    <a href="#" class="active" aria-current="page">EN</a>
-    <a href="/es/">ES</a>
-  </span>
-  <ul>
-    <li><a href="/#bio">About</a></li>
-    <li><a href="/#issues">Issues</a></li>
-    <li><a href="/#record">Record</a></li>
-    <li><a href="/#credentials">Credentials</a></li>
-    <li><a href="/#volunteer">Get Involved</a></li>
-    <li><a href="/donate" class="nav-cta">Donate</a></li>
-  </ul>
+</nav>
+
+<div class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <a href="/#bio" onclick="closeNav()">About</a>
+  <a href="/#issues" onclick="closeNav()">Issues</a>
+  <a href="/#record" onclick="closeNav()">Record</a>
+  <a href="/#credentials" onclick="closeNav()">Credentials</a>
+  <a href="/#volunteer" onclick="closeNav()">Get Involved</a>
+  <a href="/donate" class="btn-nav-donate" onclick="closeNav()">Donate</a>
 </div>
 
-<!-- ===== PAGE LAYOUT ===== -->
-<div class="donate-page">
+<div class="donate-wrap">
+  <div class="donate-inner">
 
-  <!-- LEFT: Copy + Tiers -->
-  <div class="donate-left">
+    <!-- LEFT: Sticky pitch -->
+    <div class="donate-pitch">
 
-    <div class="stars">
-      <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-    </div>
-
-    <div>
-      <div class="eyebrow">Support the Campaign</div>
-    </div>
-
-    <h1 class="donate-headline">
-      Elect Ashley<br><span>Daschofsky</span><br>Sheriff 2026
-    </h1>
-
-    <p class="donate-desc">
-      Help Ashley reach voters across Walla Walla County and win. Every dollar goes directly toward putting a proven law enforcement leader in the Sheriff's Office.
-    </p>
-
-    <div class="tier-list">
-      <div class="tier-row">
-        <div class="tier-amount">$25</div>
-        <div class="tier-desc">Yard signs that put Ashley's name on lawns across the county</div>
+      <div class="dl-stars">
+        <span class="dl-star">★</span>
+        <span class="dl-star">★</span>
+        <span class="dl-star">★</span>
+        <span class="dl-star">★</span>
+        <span class="dl-star">★</span>
       </div>
-      <div class="tier-row">
-        <div class="tier-amount">$100</div>
-        <div class="tier-desc">Mail pieces delivered to undecided voters</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-amount">$250</div>
-        <div class="tier-desc">Digital ads that reach Walla Walla families where they are</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-amount">$500</div>
-        <div class="tier-desc">A full week of voter outreach: door-knocking, phones, and events</div>
-      </div>
-    </div>
 
-  </div>
+      <div class="dl-tag">Support the Campaign</div>
 
-  <!-- RIGHT: Anedot embed (includes built-in campaign branding) -->
-  <div class="donate-right">
-    <iframe
-      src="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b?embed=true"
-      frameborder="0"
-      scrolling="auto"
-      title="Donate to Daschofsky for Sheriff">
-    </iframe>
-  </div>
+      <h1 class="dl-headline">
+        Elect Ashley <span>Daschofsky</span>
+      </h1>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="Ashley Daschofsky for Sheriff">
-        <p>Decorated deputy. Trusted neighbor. Candidate for Walla Walla County Sheriff in 2026. Restoring public safety, backing the badge, and protecting our rural communities.</p>
-      </div>
-      <ul class="footer-links">
-        <li><a href="/#bio">About</a></li>
-        <li><a href="/#issues">Issues</a></li>
-        <li><a href="/#record">Record</a></li>
-        <li><a href="/#volunteer">Get Involved</a></li>
-        <li><a href="/donate">Donate</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61589260717737" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <div class="dl-divider"></div>
+
+      <p class="dl-sub">
+        Help Ashley reach voters across Walla Walla County and win in 2026. Every dollar goes directly toward putting a proven law enforcement leader in the Sheriff's Office.
+      </p>
+
+      <ul class="dl-impact">
+        <li>
+          <span class="dl-amount">$25</span>
+          <span class="dl-what">Yard signs that put Ashley's name on lawns across Walla Walla County.</span>
+        </li>
+        <li>
+          <span class="dl-amount">$100</span>
+          <span class="dl-what">Mail pieces delivered to undecided voters across the county.</span>
+        </li>
+        <li>
+          <span class="dl-amount">$250</span>
+          <span class="dl-what">Digital ads that reach Walla Walla families where they already are.</span>
+        </li>
+        <li>
+          <span class="dl-amount">$500</span>
+          <span class="dl-what">A full week of voter outreach — door-knocking, phones, and events.</span>
+        </li>
       </ul>
-    </div>
-    <div class="footer-compliance">
-      <strong>Paid for by Daschofsky for Sheriff</strong><br>
-      500 S College Ave #21 · College Place, WA 99324<br>
-      Registered with the Washington State Public Disclosure Commission. Campaign finance records available at
-      <a href="https://www.pdc.wa.gov/" target="_blank" rel="noopener">pdc.wa.gov</a>.<br>
-      Maximum individual contribution: $2,400 per election (per WA PDC). All contributions reported per state law.<br>
-      &copy; <span id="year">2026</span> Daschofsky for Sheriff. All rights reserved.
-    </div>
-  </footer>
 
-</div><!-- /.donate-page -->
+      <img src="assets/hero-truck-k9.jpg" alt="Ashley Daschofsky for Walla Walla County Sheriff" class="dl-campaign-img">
+
+      <div class="dl-compliance">
+        Paid for by Daschofsky for Sheriff &nbsp;·&nbsp;
+        500 S College Ave #21, College Place, WA 99324<br>
+        Maximum individual contribution: $2,400 per election. Contributions are not tax deductible. &nbsp;·&nbsp;
+        <a href="https://www.pdc.wa.gov" target="_blank" rel="noopener noreferrer">WA PDC Disclosure</a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Anedot form card -->
+    <div class="donate-form-col">
+      <iframe
+        class="donate-frame"
+        src="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b?embed=true"
+        title="Donate to Daschofsky for Sheriff"
+        scrolling="auto"
+        allowpaymentrequest>
+      </iframe>
+    </div>
+
+  </div>
+</div>
 
 <script>
-(function() {
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-(function() {
-  const toggle = document.getElementById('navToggle');
-  const mobile = document.getElementById('navMobile');
-  if (!toggle || !mobile) return;
-  toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
-})();
-document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.getElementById('navToggle');
+  const navOverlay = document.getElementById('navOverlay');
+  function closeNav() {
+    navToggle.classList.remove('open');
+    navOverlay.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navOverlay.setAttribute('aria-hidden', 'true');
+  }
+  navToggle.addEventListener('click', () => {
+    const open = navToggle.classList.toggle('open');
+    navOverlay.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+    navOverlay.setAttribute('aria-hidden', !open);
+  });
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+  });
 </script>
 </body>
 </html>
