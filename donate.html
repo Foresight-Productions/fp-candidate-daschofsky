@@ -334,6 +334,75 @@
       }
     }
   </style>
+<!-- JSON-LD: Donate page schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://daschofskyforsheriff.com/donate#webpage",
+      "url": "https://daschofskyforsheriff.com/donate",
+      "name": "Donate to Daschofsky for Sheriff 2026",
+      "description": "Support Ashley Daschofsky for Walla Walla County Sheriff in 2026. Contributions fund yard signs, mail pieces, digital advertising, and voter outreach across Walla Walla County.",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@id": "https://daschofskyforsheriff.com/#website"
+      },
+      "about": {
+        "@id": "https://daschofskyforsheriff.com/#ashley-daschofsky"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://daschofskyforsheriff.com/assets/og-image.png",
+        "width": 1400,
+        "height": 788
+      }
+    },
+    {
+      "@type": "DonateAction",
+      "name": "Donate to Daschofsky for Sheriff 2026",
+      "description": "Make a secure online contribution to Ashley Daschofsky's campaign for Walla Walla County Sheriff. Maximum individual contribution: $1,200 per election per WA PDC.",
+      "recipient": {
+        "@type": "Person",
+        "@id": "https://daschofskyforsheriff.com/#ashley-daschofsky",
+        "name": "Ashley Daschofsky"
+      },
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://daschofskyforsheriff.com/donate",
+        "actionPlatform": [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform"
+        ]
+      },
+      "price": "1.00",
+      "priceCurrency": "USD",
+      "potentialAction": {
+        "@type": "PayAction",
+        "target": "https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://daschofskyforsheriff.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Donate",
+          "item": "https://daschofskyforsheriff.com/donate"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
