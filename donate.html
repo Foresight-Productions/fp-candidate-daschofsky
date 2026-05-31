@@ -133,10 +133,8 @@
 
     /* PAGE WRAPPER */
     .donate-wrap {
-      padding-top: calc(var(--nav-h) + 3rem);
+      padding-top: var(--nav-h);
       padding-bottom: 5rem;
-      padding-left: 5%;
-      padding-right: 5%;
       position: relative;
       overflow: hidden;
     }
@@ -150,17 +148,17 @@
       pointer-events: none;
     }
 
-    /* CONTENT CONTAINER */
-    .dwrap-inner { max-width: 1180px; margin: 0 auto; position: relative; z-index: 1; }
-
-    /* HERO BACKGROUND PHOTO */
-    .dhero-bg {
-      position: absolute; top: 0; left: 0; right: 0; height: 560px;
-      z-index: 0; pointer-events: none;
+    /* HERO BANNER (full-width photo at top) */
+    .donate-hero {
+      width: 100%;
+      height: clamp(300px, 40vw, 480px);
       background:
-        linear-gradient(to bottom, rgba(20,19,15,0.45) 0%, rgba(20,19,15,0.8) 62%, rgba(20,19,15,1) 100%),
-        url('assets/hero-truck-k9.jpg') 50% 13% / cover no-repeat;
+        linear-gradient(to bottom, rgba(20,19,15,0.12) 0%, rgba(20,19,15,0.3) 55%, rgba(20,19,15,0.85) 88%, var(--bg) 100%),
+        url('assets/hero-truck-k9.jpg') 50% 20% / cover no-repeat;
     }
+
+    /* CONTENT CONTAINER */
+    .dwrap-inner { max-width: 1180px; margin: 0 auto; padding: 2.8rem 5% 0; position: relative; z-index: 1; }
 
     /* TWO-COLUMN LAYOUT */
     .donate-inner {
@@ -260,8 +258,7 @@
       #nav { justify-content: space-between; }
       .nav-brand-name { font-size: 1.35rem; }
       .nav-brand-sub { font-size: 0.55rem; letter-spacing: 0.3em; }
-      .donate-wrap { padding-top: calc(var(--nav-h) + 2rem); padding-left: 5%; padding-right: 5%; }
-      .dhero-bg { height: 440px; }
+      .donate-hero { height: clamp(220px, 52vw, 320px); }
     }
   </style>
 <!-- JSON-LD: Donate page schema -->
@@ -366,7 +363,7 @@
 </div>
 
 <div class="donate-wrap">
-  <div class="dhero-bg" aria-hidden="true"></div>
+  <div class="donate-hero" role="img" aria-label="Ashley Daschofsky with his K9 partner"></div>
   <div class="dwrap-inner">
 
     <div class="donate-inner">
