@@ -155,11 +155,11 @@
 
     /* HERO BACKGROUND PHOTO */
     .dhero-bg {
-      position: absolute; top: 0; left: 0; right: 0; height: 540px;
+      position: absolute; top: 0; left: 0; right: 0; height: 560px;
       z-index: 0; pointer-events: none;
       background:
-        linear-gradient(to bottom, rgba(20,19,15,0.5) 0%, rgba(20,19,15,0.8) 60%, rgba(20,19,15,1) 100%),
-        url('assets/hero-truck-k9.jpg') center 24% / cover no-repeat;
+        linear-gradient(to bottom, rgba(20,19,15,0.45) 0%, rgba(20,19,15,0.8) 62%, rgba(20,19,15,1) 100%),
+        url('assets/hero-truck-k9.jpg') 50% 13% / cover no-repeat;
     }
 
     /* TWO-COLUMN LAYOUT */
@@ -168,8 +168,8 @@
       gap: 4rem; align-items: start; margin-bottom: 4.5rem;
     }
 
-    /* LEFT — STICKY PITCH */
-    .donate-pitch { position: sticky; top: calc(var(--nav-h) + 1.6rem); }
+    /* LEFT — PITCH (top-aligned with action panel) */
+    .donate-pitch { align-self: start; }
     .dl-stars { display: flex; gap: 0.45rem; margin-bottom: 1.2rem; }
     .dl-stars span { color: var(--gold); font-size: 0.95rem; }
     .dl-tag {
