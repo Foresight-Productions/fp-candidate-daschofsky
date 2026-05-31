@@ -153,8 +153,17 @@
     /* CONTENT CONTAINER */
     .dwrap-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
 
+    /* HERO BACKGROUND PHOTO */
+    .dhero-bg {
+      position: absolute; top: 0; left: 0; right: 0; height: 660px;
+      z-index: 0; pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(20,19,15,0.55) 0%, rgba(20,19,15,0.78) 55%, rgba(20,19,15,1) 100%),
+        url('assets/hero-truck-k9.jpg') center 26% / cover no-repeat;
+    }
+
     /* HERO */
-    .dhero { max-width: 760px; margin: 0 auto 4.5rem; text-align: center; }
+    .dhero { max-width: 760px; margin: 2rem auto 4rem; text-align: center; }
     .dhero-stars { display: flex; gap: 0.45rem; justify-content: center; margin-bottom: 1.3rem; }
     .dhero-stars span { color: var(--gold); font-size: 0.95rem; }
     .dhero-tag {
@@ -222,6 +231,16 @@
       display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem;
     }
     .tier-go svg { width: 13px; height: 13px; }
+    /* Featured (Most Popular) tier */
+    .tier-card.tier-featured { border-color: var(--gold); background: rgba(200,162,74,0.06); }
+    .tier-card.tier-featured::before { transform: scaleX(1); }
+    .tier-badge {
+      position: absolute; top: 0; right: 0;
+      background: var(--gold); color: var(--bg);
+      font-family: var(--body); font-size: 0.6rem; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.32rem 0.7rem; border-bottom-left-radius: 6px;
+    }
 
     /* RULES */
     .drules {
@@ -263,6 +282,8 @@
       .nav-brand-name { font-size: 1.35rem; }
       .nav-brand-sub { font-size: 0.55rem; letter-spacing: 0.3em; }
       .donate-wrap { padding-top: calc(var(--nav-h) + 2rem); padding-left: 5%; padding-right: 5%; }
+      .dhero-bg { height: 480px; }
+      .dhero { margin-top: 0.5rem; }
     }
     @media (max-width: 560px) {
       .tier-grid { grid-template-columns: 1fr; }
@@ -370,6 +391,7 @@
 </div>
 
 <div class="donate-wrap">
+  <div class="dhero-bg" aria-hidden="true"></div>
   <div class="dwrap-inner">
 
     <!-- HERO -->
@@ -412,7 +434,8 @@
           <span class="tier-what">Door hangers for neighborhood canvassing across the county.</span>
           <span class="tier-go">Donate $50 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></span>
         </a>
-        <a class="tier-card" href="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b?amount=100">
+        <a class="tier-card tier-featured" href="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b?amount=100">
+          <span class="tier-badge">Most Popular</span>
           <span class="tier-amt">$100</span>
           <span class="tier-what">Mail pieces delivered to undecided voters across the county.</span>
           <span class="tier-go">Donate $100 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></span>
