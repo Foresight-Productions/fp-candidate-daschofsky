@@ -227,6 +227,17 @@
     .amount-arrow svg { width: 17px; height: 17px; transition: transform 180ms; }
     .amount-btn:hover .amount-arrow svg { transform: translateX(3px); }
     .amount-btn.featured { border-color: var(--gold); background: rgba(200,162,74,0.06); }
+    .action-donate-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      width: 100%; margin-top: 1.1rem; padding: 1.15rem;
+      background: var(--gold); color: var(--bg);
+      font-family: var(--body); font-size: 0.98rem; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+      border-radius: 6px; transition: background 180ms, transform 180ms;
+    }
+    .action-donate-btn svg { width: 18px; height: 18px; transition: transform 180ms; }
+    .action-donate-btn:hover { background: var(--gold-deep); transform: translateY(-2px); }
+    .action-donate-btn:hover svg { transform: translateX(4px); }
     .action-secure {
       margin-top: 1.7rem; display: flex; flex-direction: column; align-items: center; gap: 0.45rem; text-align: center;
     }
@@ -427,6 +438,10 @@
             <span class="amount-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg></span>
           </a>
         </div>
+        <a class="action-donate-btn" href="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b">
+          Donate Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg>
+        </a>
         <div class="action-secure">
           <span class="action-secure-row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
