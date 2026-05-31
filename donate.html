@@ -301,12 +301,52 @@
       position: absolute; left: 0; right: 0; top: 0;
       height: 3px; background: var(--gold); z-index: 2;
     }
-    .donate-frame {
-      width: 100%;
-      border: 0;
-      display: block;
-      background: #fff;
-      height: 1900px;
+    /* DONATE CTA CARD */
+    .donate-cta { padding: 2.8rem 2.4rem 2.4rem; }
+    .cta-secure {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--body); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold-deep); margin-bottom: 1.2rem;
+    }
+    .cta-secure svg { width: 14px; height: 14px; }
+    .donate-cta h2 {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+      letter-spacing: 0.02em; text-transform: uppercase;
+      color: #14130F; line-height: 1.0; margin-bottom: 0.8rem;
+    }
+    .cta-sub {
+      font-family: var(--body); font-size: 0.95rem;
+      color: #5d5a52; line-height: 1.6; margin-bottom: 2rem;
+    }
+    .cta-donate-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+      width: 100%; padding: 1.15rem;
+      background: var(--gold); color: #14130F;
+      font-family: var(--body); font-size: 0.98rem; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border-radius: 4px;
+      transition: background 180ms, transform 180ms;
+    }
+    .cta-donate-btn svg { width: 18px; height: 18px; transition: transform 180ms; }
+    .cta-donate-btn:hover { background: var(--gold-deep); transform: translateY(-2px); }
+    .cta-donate-btn:hover svg { transform: translateX(4px); }
+    .cta-methods {
+      display: flex; flex-direction: column; align-items: center; gap: 0.55rem;
+      margin-top: 1.8rem; padding-top: 1.6rem; border-top: 1px solid #ece8de;
+    }
+    .cta-methods-label {
+      font-family: var(--body); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #8a857a;
+    }
+    .cta-methods-list {
+      font-family: var(--body); font-size: 0.88rem; font-weight: 600;
+      color: #14130F; text-align: center; line-height: 1.6;
+    }
+    .cta-fine {
+      margin-top: 1.1rem; font-size: 0.72rem; color: #9a958b;
+      text-align: center; line-height: 1.55;
     }
 
     /* MOBILE */
@@ -499,16 +539,27 @@
 
     </div>
 
-    <!-- RIGHT: Anedot form card -->
+    <!-- RIGHT: Donate CTA card -->
     <div class="donate-form-col">
-      <iframe
-        class="donate-frame"
-        src="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b?embed=true"
-        title="Donate to Daschofsky for Sheriff"
-        scrolling="auto"
-        allow="payment; publickey-credentials-get"
-        allowpaymentrequest>
-      </iframe>
+      <div class="donate-cta">
+        <div class="cta-secure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secure Donation
+        </div>
+        <h2>Make Your Contribution</h2>
+        <p class="cta-sub">Continue to our secure payment page to donate by credit card, Apple Pay, or Google Pay. Every dollar fuels the campaign to put a proven law enforcement leader in the Sheriff's Office.</p>
+
+        <a class="cta-donate-btn" href="https://secure.anedot.com/daschofsky-for-sherifd/d2d7a7b1-8c55-4e89-995c-18953b44139b">
+          Donate Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/></svg>
+        </a>
+
+        <div class="cta-methods">
+          <span class="cta-methods-label">Accepted Payment Methods</span>
+          <span class="cta-methods-list">Apple&nbsp;Pay &nbsp;·&nbsp; Google&nbsp;Pay &nbsp;·&nbsp; Visa &nbsp;·&nbsp; Mastercard &nbsp;·&nbsp; Amex &nbsp;·&nbsp; Discover</span>
+        </div>
+        <p class="cta-fine">Payments are processed securely by Anedot. You'll complete your donation on the encrypted Anedot payment page.</p>
+      </div>
     </div>
 
   </div>
