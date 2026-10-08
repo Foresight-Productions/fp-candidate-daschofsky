@@ -593,7 +593,6 @@ body {
 }
 .endorse-role { font-size: 0.84rem; color: var(--text-muted); margin-top: 0.3rem; }
 
-
 .updates { background: var(--bg-surface); }
 .updates-form { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 2rem; max-width: 42rem; }
 .updates-form-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
@@ -1148,6 +1147,34 @@ body {
   </div>
 </section>
 
+<!-- ===== VIDEO: SU HISTORIA ===== -->
+<section class="section video-section" id="story">
+  <div class="container">
+    <div class="video-head fade-up">
+      <div class="eyebrow">Conoce a Ashley</div>
+      <h2 class="section-title">Su historia, en sus propias palabras.</h2>
+      <p class="section-lead">Desde un recorrido policial en diciembre a los doce años, al Cuerpo de Marines, a la Oficina del Sheriff del Condado de Walla Walla — el camino que formó al hombre que ahora se postula para dirigirla.</p>
+    </div>
+    <div class="video-frame fade-up">
+      <video id="ashleyVideo" controls preload="none" playsinline poster="../assets/ashley-video-poster.jpg">
+        <source src="https://media.daschofskyforsheriff.com/ashley.mp4" type="video/mp4">
+        Tu navegador no admite video incrustado. <a href="https://media.daschofskyforsheriff.com/ashley.mp4">Descarga el video</a>.
+      </video>
+      <button class="video-play" id="ashleyPlay" type="button" aria-label="Reproducir video">
+        <span class="video-play-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="7 4 20 12 7 20"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="section-break sb-stripe" aria-hidden="true">
+  <div class="sb-rule sb-rule-l"></div>
+  <div class="sb-icon"><svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z"/></svg></div>
+  <div class="sb-rule sb-rule-r"></div>
+</div>
+
 <section class="section" id="bio">
   <div class="container">
     <div class="bio-grid">
@@ -1179,34 +1206,6 @@ body {
           Walla Walla es mi hogar. Es donde está mi corazón, y siempre lo ha sido. Estoy 100% comprometido a asegurar que tu hogar y el mío sean seguros, libre de daño, y que tengas una Oficina del Sheriff de la que los ciudadanos de este condado puedan sentirse orgullosos.
         </p>
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-break sb-stripe" aria-hidden="true">
-  <div class="sb-rule sb-rule-l"></div>
-  <div class="sb-icon"><svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z"/></svg></div>
-  <div class="sb-rule sb-rule-r"></div>
-</div>
-
-<!-- ===== VIDEO: SU HISTORIA ===== -->
-<section class="section video-section" id="story">
-  <div class="container">
-    <div class="video-head fade-up">
-      <div class="eyebrow">Conoce a Ashley</div>
-      <h2 class="section-title">Su historia, en sus propias palabras.</h2>
-      <p class="section-lead">Desde un recorrido policial en diciembre a los doce años, al Cuerpo de Marines, a la Oficina del Sheriff del Condado de Walla Walla — el camino que formó al hombre que ahora se postula para dirigirla.</p>
-    </div>
-    <div class="video-frame fade-up">
-      <video id="ashleyVideo" controls preload="none" playsinline poster="../assets/ashley-video-poster.jpg">
-        <source src="https://media.daschofskyforsheriff.com/ashley.mp4" type="video/mp4">
-        Tu navegador no admite video incrustado. <a href="https://media.daschofskyforsheriff.com/ashley.mp4">Descarga el video</a>.
-      </video>
-      <button class="video-play" id="ashleyPlay" type="button" aria-label="Reproducir video">
-        <span class="video-play-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="7 4 20 12 7 20"/></svg>
-        </span>
-      </button>
     </div>
   </div>
 </section>
