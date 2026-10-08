@@ -1002,6 +1002,60 @@ body {
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; }
 }
+
+/* ===== STORY VIDEO ===== */
+.video-section { background: var(--bg-stripe); }
+.video-head { text-align: center; max-width: 60ch; margin: 0 auto; }
+.video-frame {
+  position: relative;
+  max-width: 1000px;
+  margin: 2.8rem auto 0;
+  padding: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line-bright);
+  box-shadow: 0 24px 60px oklch(0 0 0 / 0.5);
+}
+.video-frame::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--gold); z-index: 3;
+}
+.video-frame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  object-fit: cover;
+}
+.video-play {
+  position: absolute; inset: 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none; cursor: pointer;
+  z-index: 2; transition: opacity 180ms;
+}
+.video-play::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: oklch(0.13 0.008 80 / 0.28);
+  transition: background 180ms;
+}
+.video-play:hover::after { background: oklch(0.13 0.008 80 / 0.12); }
+.video-play-btn {
+  position: relative; z-index: 1;
+  width: 86px; height: 86px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gold); color: var(--bg-deep);
+  border-radius: 50%;
+  box-shadow: 0 8px 30px oklch(0 0 0 / 0.55);
+  transition: transform 200ms ease, background 180ms;
+}
+.video-play:hover .video-play-btn { transform: scale(1.07); background: oklch(0.82 0.13 85); }
+.video-play-btn svg { width: 34px; height: 34px; margin-left: 5px; }
+.video-play.hidden { display: none; }
+@media (max-width: 640px) {
+  .video-play-btn { width: 66px; height: 66px; }
+  .video-play-btn svg { width: 26px; height: 26px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -1125,6 +1179,34 @@ body {
           Walla Walla es mi hogar. Es donde está mi corazón, y siempre lo ha sido. Estoy 100% comprometido a asegurar que tu hogar y el mío sean seguros, libre de daño, y que tengas una Oficina del Sheriff de la que los ciudadanos de este condado puedan sentirse orgullosos.
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-break sb-stripe" aria-hidden="true">
+  <div class="sb-rule sb-rule-l"></div>
+  <div class="sb-icon"><svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 1 L11.5 8.5 L19 10 L11.5 11.5 L10 19 L8.5 11.5 L1 10 L8.5 8.5 Z"/></svg></div>
+  <div class="sb-rule sb-rule-r"></div>
+</div>
+
+<!-- ===== VIDEO: SU HISTORIA ===== -->
+<section class="section video-section" id="story">
+  <div class="container">
+    <div class="video-head fade-up">
+      <div class="eyebrow">Conoce a Ashley</div>
+      <h2 class="section-title">Su historia, en sus propias palabras.</h2>
+      <p class="section-lead">Desde un recorrido policial en diciembre a los doce años, al Cuerpo de Marines, a la Oficina del Sheriff del Condado de Walla Walla — el camino que formó al hombre que ahora se postula para dirigirla.</p>
+    </div>
+    <div class="video-frame fade-up">
+      <video id="ashleyVideo" controls preload="none" playsinline poster="../assets/ashley-video-poster.jpg">
+        <source src="../assets/ashley.mp4" type="video/mp4">
+        Tu navegador no admite video incrustado. <a href="../assets/ashley.mp4">Descarga el video</a>.
+      </video>
+      <button class="video-play" id="ashleyPlay" type="button" aria-label="Reproducir video">
+        <span class="video-play-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="7 4 20 12 7 20"/></svg>
+        </span>
+      </button>
     </div>
   </div>
 </section>
@@ -1526,6 +1608,17 @@ body {
 })();
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Story video: click-to-play overlay
+(function() {
+  var v = document.getElementById('ashleyVideo');
+  var btn = document.getElementById('ashleyPlay');
+  if (!v || !btn) return;
+  btn.addEventListener('click', function() { v.play(); });
+  v.addEventListener('play', function() { btn.classList.add('hidden'); });
+  v.addEventListener('pause', function() { if (v.currentTime < v.duration) btn.classList.remove('hidden'); });
+  v.addEventListener('ended', function() { btn.classList.remove('hidden'); });
+})();
 
 // Form submission
 async function handleFormSubmit(e, form, msgId) {
