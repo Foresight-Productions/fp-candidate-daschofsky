@@ -1422,6 +1422,62 @@ body {
   .video-play-btn { width: 66px; height: 66px; }
   .video-play-btn svg { width: 26px; height: 26px; }
 }
+
+/* ===== VIDEO POPUP MODAL ===== */
+body.modal-open { overflow: hidden; }
+.video-modal {
+  position: fixed; inset: 0; z-index: 3000;
+  display: none; align-items: center; justify-content: center;
+  padding: clamp(1rem, 5vh, 4rem) clamp(1rem, 5vw, 4rem);
+  opacity: 0; transition: opacity 400ms ease;
+}
+.video-modal.open { display: flex; }
+.video-modal.show { opacity: 1; }
+.video-modal-backdrop {
+  position: absolute; inset: 0;
+  background: oklch(0.07 0.006 80 / 0.9);
+  backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+}
+.video-modal-inner {
+  position: relative; z-index: 1; width: 100%; max-width: 940px;
+  transform: translateY(16px) scale(0.98);
+  transition: transform 420ms cubic-bezier(.2,.8,.2,1);
+}
+.video-modal.show .video-modal-inner { transform: none; }
+.video-modal-eyebrow {
+  text-align: center; font-family: var(--font-body);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.5rem;
+}
+.video-modal-title {
+  text-align: center; font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.4vw, 2.1rem); letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--text-bright); line-height: 1; margin-bottom: 1.3rem;
+}
+.video-modal-frame {
+  position: relative; padding: 10px;
+  background: var(--bg-surface); border: 1px solid var(--line-bright);
+  box-shadow: 0 30px 90px oklch(0 0 0 / 0.65);
+}
+.video-modal-frame::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); z-index: 3;
+}
+.video-modal-frame video {
+  display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; object-fit: cover;
+}
+.video-modal-close {
+  position: absolute; top: clamp(0.8rem, 3vh, 1.6rem); right: clamp(0.8rem, 3vw, 1.6rem); z-index: 4;
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gold); color: var(--bg-deep); border: none; cursor: pointer;
+  font-size: 1.7rem; line-height: 1;
+  box-shadow: 0 6px 20px oklch(0 0 0 / 0.5);
+  transition: transform 180ms, background 180ms;
+}
+.video-modal-close:hover { transform: scale(1.08); background: oklch(0.82 0.13 85); }
+@media (max-width: 600px) {
+  .video-modal-close { width: 40px; height: 40px; font-size: 1.5rem; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -2010,6 +2066,26 @@ body {
   </div>
 </footer>
 
+<!-- ===== VIDEO POPUP MODAL ===== -->
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Meet Ashley — campaign video">
+  <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+  <button class="video-modal-close" id="videoModalClose" type="button" aria-label="Close video">&times;</button>
+  <div class="video-modal-inner">
+    <div class="video-modal-eyebrow">Meet Ashley</div>
+    <div class="video-modal-title">His story, in his own words.</div>
+    <div class="video-modal-frame">
+      <video id="ashleyModalVideo" controls preload="none" playsinline poster="assets/ashley-video-poster.jpg">
+        <source src="https://media.daschofskyforsheriff.com/ashley.mp4" type="video/mp4">
+      </video>
+      <button class="video-play" id="ashleyModalPlay" type="button" aria-label="Play video">
+        <span class="video-play-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="7 4 20 12 7 20"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
 <script>
 // Nav scroll state
 (function() {
@@ -2090,6 +2166,37 @@ document.getElementById('year').textContent = new Date().getFullYear();
   v.addEventListener('play', function() { btn.classList.add('hidden'); });
   v.addEventListener('pause', function() { if (v.currentTime < v.duration) btn.classList.remove('hidden'); });
   v.addEventListener('ended', function() { btn.classList.remove('hidden'); });
+})();
+
+// Story video popup modal (opens on load, dims the page)
+(function() {
+  var modal = document.getElementById('videoModal');
+  if (!modal) return;
+  var v = document.getElementById('ashleyModalVideo');
+  var playBtn = document.getElementById('ashleyModalPlay');
+  var closeBtn = document.getElementById('videoModalClose');
+  var backdrop = document.getElementById('videoModalBackdrop');
+  function openModal() {
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ modal.classList.add('show'); }); });
+  }
+  function closeModal() {
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+    if (v) v.pause();
+    setTimeout(function(){ modal.classList.remove('open'); }, 420);
+  }
+  if (playBtn && v) {
+    playBtn.addEventListener('click', function(){ v.play(); });
+    v.addEventListener('play', function(){ playBtn.classList.add('hidden'); });
+    v.addEventListener('pause', function(){ if (v.currentTime < v.duration) playBtn.classList.remove('hidden'); });
+    v.addEventListener('ended', function(){ playBtn.classList.remove('hidden'); });
+  }
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+  window.setTimeout(openModal, 450);
 })();
 
 // Form submission
